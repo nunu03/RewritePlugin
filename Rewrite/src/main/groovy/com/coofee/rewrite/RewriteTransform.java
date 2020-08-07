@@ -14,6 +14,7 @@ import com.coofee.rewrite.nineoldandroids.NineOldAndroidsRewriter;
 import com.coofee.rewrite.reflect.ReflectExtension;
 import com.coofee.rewrite.reflect.ReflectRewriter;
 import com.coofee.rewrite.util.AsmUtil;
+import com.coofee.rewrite.util.ClassUtil;
 import com.coofee.rewrite.util.FileUtil;
 import com.coofee.rewrite.util.ReflectUtil;
 
@@ -167,11 +168,13 @@ class RewriteTransform extends Transform {
 
                     try {
                         byte[] bytecode = FileUtils.readFileToByteArray(inputFile);
-                        ClassNode classNode = AsmUtil.convert(bytecode);
-                        for (Rewriter rewriter : rewriterSet) {
-                            classNode = rewriter.transform(directoryInput, classNode);
+                        if (ClassUtil.isValidClassBytes(bytecode)) {
+                            ClassNode classNode = AsmUtil.convert(bytecode);
+                            for (Rewriter rewriter : rewriterSet) {
+                                classNode = rewriter.transform(directoryInput, classNode);
+                            }
+                            bytecode = AsmUtil.convert(classNode);
                         }
-                        bytecode = AsmUtil.convert(classNode);
                         FileUtils.writeByteArrayToFile(outputFile, bytecode);
 
 //                        rewriteCache.put(directoryInput.getName(), directoryInput.getFile());

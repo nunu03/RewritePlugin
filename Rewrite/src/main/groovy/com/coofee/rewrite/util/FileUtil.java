@@ -88,7 +88,7 @@ public class FileUtil {
                 final String name = originEntry.getName();
                 byte[] bytecode = new byte[(int) originEntry.getSize()];
                 IOUtils.readFully(zipFileInput.getInputStream(originEntry), bytecode);
-                if (name.endsWith(".class")) {
+                if (name.endsWith(".class") && ClassUtil.isValidClassBytes(bytecode)) {
                     bytecode = bytecodeTransform.apply(name, bytecode);
                 }
                 zipOutput.putNextEntry(new ZipEntry(name));
