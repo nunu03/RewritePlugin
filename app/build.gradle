@@ -23,6 +23,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'kotlin/**'
+        exclude 'META-INF/*.kotlin_module'
+    }
+
 }
 
 dependencies {
@@ -34,5 +41,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // add
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+
+    // changed
+//    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // removed
+//    implementation 'com.google.code.gson:gson:2.8.5'
 
 }
