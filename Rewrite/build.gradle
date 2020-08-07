@@ -1,0 +1,47 @@
+//apply plugin: 'groovy'
+//apply plugin: 'maven-publish'
+
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'com.coofee.rewrite'
+            implementationClass = 'com.coofee.rewrite.RewritePlugin'
+        }
+    }
+}
+
+dependencies {
+    compile localGroovy()
+    compile gradleApi()
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.tools.build:gradle:3.4.1'
+    implementation 'com.android.tools.build:gradle-api:3.4.1'
+
+    compile group: 'org.ow2.asm', name: 'asm-commons', version: '7.0'
+    compile 'com.google.code.gson:gson:2.8.5'
+}
+
+repositories {
+    google()
+    jcenter()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.coofee.rewrite'
+            artifactId = 'rewrite'
+            version = '1.0.0'
+
+            from components.java
+        }
+    }
+}
+
+

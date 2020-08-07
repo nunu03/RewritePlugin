@@ -1,0 +1,48 @@
+apply plugin: 'com.coofee.rewrite'
+
+rewrite {
+
+    nineOldAndroids {
+        enable = true
+
+        excludes = [
+                "androidx.",
+                "com.google.",
+                "com.airbnb.",
+                "com.amap.",
+                "com.facebook.",
+                "com.huawei.",
+                "com.networkbench.",
+                "com.orhanobut.",
+                "com.squareup.",
+                "com.tencent.",
+                "com.umeng.",
+                "io.agora.",
+                "io.reactivex",
+                "io.requery",
+                "org.jetbrains.",
+                "com.youth.banner",
+        ]
+    }
+
+    reflect {
+        enable = true
+
+        myAppPackages = [
+                "com/coofee/rewrite/",
+        ]
+
+        classAndMethods = [
+                "java/lang/Class"      : ["forName"],
+                "java/lang/ClassLoader": ["loadClass"]
+        ]
+    }
+
+    annotation {
+        enable = true
+
+        annotations = [
+                "Lkotlin/Metadata;"
+        ]
+    }
+}
