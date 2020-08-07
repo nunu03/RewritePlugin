@@ -1,7 +1,10 @@
 package com.coofee.rewrite;
 
+import com.android.build.api.transform.DirectoryInput;
 import com.android.build.api.transform.Format;
+import com.android.build.api.transform.JarInput;
 import com.android.build.api.transform.QualifiedContent;
+import com.android.build.api.transform.Status;
 import com.android.build.api.transform.Transform;
 import com.android.build.api.transform.TransformInvocation;
 import com.android.build.api.transform.TransformOutputProvider;
@@ -25,13 +28,14 @@ import org.objectweb.asm.tree.ClassNode;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 class RewriteTransform extends Transform {
 
     private final Project project;
     private final Set<Rewriter> rewriterSet = new HashSet<>();
-    private RewriteCache rewriteCache;
+//    private RewriteCache rewriteCache;
 
     public RewriteTransform(Project project) {
         this.project = project;
@@ -88,28 +92,37 @@ class RewriteTransform extends Transform {
             rewriterSet.add(new AnnotationRewriter(annotation));
         }
 
-        final File cacheFile = new File(folderUtils.getRootFolder(), RewriteCache.CACHE_FILE_NAME);
-        rewriteCache = new RewriteCache(cacheFile, rewriteExtension);
-        boolean valid = rewriteCache.isValid();
-        System.out.println("[RewritePlugin] load cache success, cache is valid? " + valid);
+//        final File cacheFile = new File(folderUtils.getRootFolder(), RewriteCache.CACHE_FILE_NAME);
+//        rewriteCache = new RewriteCache(cacheFile, rewriteExtension);
+//        boolean valid = rewriteCache.isValid();
+//        System.out.println("[RewritePlugin] load cache success, cache is valid? " + valid);
 
         for (Rewriter rewriter : rewriterSet) {
-            rewriter.preTransform(transformInvocation, rewriteCache);
+            rewriter.preTransform(transformInvocation);
         }
 
         final boolean incremental = transformInvocation.isIncremental();
-        if (incremental && valid) {
+        System.out.println("[RewritePlugin] transformInvocation.isIncremental()=" + incremental);
+
+        if (incremental) {
+            System.out.println("[RewritePlugin] incremental transform");
             incrementTransform(transformInvocation, outputProvider);
         } else {
+            System.out.println("[RewritePlugin] full transform");
             fullTransform(transformInvocation, outputProvider);
         }
 
         for (Rewriter rewriter : rewriterSet) {
-            rewriter.postTransform(transformInvocation, rewriteCache);
+            rewriter.postTransform(transformInvocation);
         }
 
-        boolean commit = rewriteCache.commit();
-        System.out.println("[RewritePlugin] commit to cache success? " + commit);
+//        boolean commit = rewriteCache.commit();
+//        System.out.println("[RewritePlugin] commit to cache success? " + commit);
+    }
+
+    @Override
+    public boolean isCacheable() {
+        return true;
     }
 
     private void fullTransform(TransformInvocation transformInvocation, TransformOutputProvider outputProvider) throws IOException {
@@ -119,31 +132,7 @@ class RewriteTransform extends Transform {
 
             // 处理jar
             transformInput.getJarInputs().forEach(jarInput -> {
-
-                File outputJar = outputProvider.getContentLocation(jarInput.getName(), jarInput.getContentTypes(), jarInput.getScopes(), Format.JAR);
-
-                for (Rewriter rewriter : rewriterSet) {
-                    if (rewriter.needRemoveDependency(jarInput, null)) {
-                        System.out.println("[RewritePlugin] remove jar: " + jarInput.getName() + ", file=" + outputJar.getName());
-                        FileUtils.deleteQuietly(outputJar);
-                        return;
-                    }
-                }
-
-                System.out.println("[RewritePlugin] process jar: " + jarInput.getName());
-                try {
-                    FileUtil.traverseJarClass(jarInput.getFile(), outputJar, (name, bytecode) -> {
-                        ClassNode classNode = AsmUtil.convert(bytecode);
-                        for (Rewriter rewriter : rewriterSet) {
-                            classNode = rewriter.transform(jarInput, classNode);
-                        }
-                        return AsmUtil.convert(classNode);
-                    });
-
-                    rewriteCache.put(jarInput.getName(), jarInput.getFile());
-                } catch (Throwable e) {
-                    project.getLogger().info("[RewritePlugin] fail process jar: " + jarInput.getFile(), e);
-                }
+                processJar(outputProvider, jarInput);
             });
 
             // 处理directory
@@ -160,27 +149,11 @@ class RewriteTransform extends Transform {
                     }
                 }
 
-                System.out.println("[RewritePlugin]; process directory: " + inputDir.getName());
+                System.out.println("[RewritePlugin] process directory: " + inputDir.getName());
                 FileUtil.eachFileRecurse(inputDir, inputFile -> {
                     String outFilePath = inputFile.getAbsolutePath().replace(inputDir.getAbsolutePath(), outputDir.getAbsolutePath());
                     File outputFile = new File(outFilePath);
-                    FileUtils.deleteQuietly(outputFile);
-
-                    try {
-                        byte[] bytecode = FileUtils.readFileToByteArray(inputFile);
-                        if (ClassUtil.isValidClassBytes(bytecode)) {
-                            ClassNode classNode = AsmUtil.convert(bytecode);
-                            for (Rewriter rewriter : rewriterSet) {
-                                classNode = rewriter.transform(directoryInput, classNode);
-                            }
-                            bytecode = AsmUtil.convert(classNode);
-                        }
-                        FileUtils.writeByteArrayToFile(outputFile, bytecode);
-
-//                        rewriteCache.put(directoryInput.getName(), directoryInput.getFile());
-                    } catch (Throwable e) {
-                        project.getLogger().info("[RewritePlugin] fail process file: " + inputFile, e);
-                    }
+                    processFile(directoryInput, inputFile, outputFile);
                 });
             });
         });
@@ -194,12 +167,16 @@ class RewriteTransform extends Transform {
                 // 需要删除 com.nineoldandroids库
 
                 File outLocation = outputProvider.getContentLocation(jarInput.getName(), jarInput.getContentTypes(), jarInput.getScopes(), Format.JAR);
+                System.out.println("[RewritePlugin] increment jarInput=" + jarInput.getName() + ", status=" + jarInput.getStatus());
+
                 switch (jarInput.getStatus()) {
                     case ADDED:
                     case CHANGED:
+                        processJar(outputProvider, jarInput);
                         break;
 
                     case REMOVED:
+                        FileUtils.deleteQuietly(outLocation);
                         break;
 
                     case NOTCHANGED:
@@ -211,8 +188,85 @@ class RewriteTransform extends Transform {
 
             // 处理directory
             transformInput.getDirectoryInputs().forEach(directoryInput -> {
-                File outLocation = outputProvider.getContentLocation(directoryInput.getName(), directoryInput.getContentTypes(), directoryInput.getScopes(), Format.DIRECTORY);
+
+                File inputDir = directoryInput.getFile();
+                File outputDir = outputProvider.getContentLocation(directoryInput.getName(), directoryInput.getContentTypes(), directoryInput.getScopes(), Format.DIRECTORY);
+                Map<File, Status> changedFiles = directoryInput.getChangedFiles();
+                if (changedFiles == null || changedFiles.isEmpty()) {
+                    return;
+                }
+
+                System.out.println("[RewritePlugin] increment directoryInput=" + directoryInput.getName() + ", changedFiles.size=" + changedFiles.size());
+
+                changedFiles.forEach((inputFile, status) -> {
+                    String outFilePath = inputFile.getAbsolutePath().replace(inputDir.getAbsolutePath(), outputDir.getAbsolutePath());
+                    File outputFile = new File(outFilePath);
+
+                    System.out.println("[RewritePlugin] changed file=" + inputFile + ", status=" + status);
+
+                    switch (status) {
+                        case ADDED:
+                        case CHANGED:
+                            processFile(directoryInput, inputFile, outputFile);
+                            break;
+
+                        case REMOVED:
+                            FileUtils.deleteQuietly(outputFile);
+                            break;
+
+                        case NOTCHANGED:
+                        default:
+                            break;
+                    }
+                });
             });
         });
+    }
+
+    private void processFile(DirectoryInput directoryInput, File inputFile, File outputFile) {
+        FileUtils.deleteQuietly(outputFile);
+
+        try {
+            byte[] bytecode = FileUtils.readFileToByteArray(inputFile);
+            if (ClassUtil.isValidClassBytes(bytecode)) {
+                ClassNode classNode = AsmUtil.convert(bytecode);
+                for (Rewriter rewriter : rewriterSet) {
+                    classNode = rewriter.transform(directoryInput, classNode);
+                }
+                bytecode = AsmUtil.convert(classNode);
+            }
+            FileUtils.writeByteArrayToFile(outputFile, bytecode);
+
+//                        rewriteCache.put(directoryInput.getName(), directoryInput.getFile());
+        } catch (Throwable e) {
+            project.getLogger().info("[RewritePlugin] fail process file: " + inputFile, e);
+        }
+    }
+
+    private void processJar(TransformOutputProvider outputProvider, JarInput jarInput) {
+        File outputJar = outputProvider.getContentLocation(jarInput.getName(), jarInput.getContentTypes(), jarInput.getScopes(), Format.JAR);
+
+        for (Rewriter rewriter : rewriterSet) {
+            if (rewriter.needRemoveDependency(jarInput, null)) {
+                System.out.println("[RewritePlugin] remove jar: " + jarInput.getName() + ", file=" + outputJar.getName());
+                FileUtils.deleteQuietly(outputJar);
+                return;
+            }
+        }
+
+        System.out.println("[RewritePlugin] process jar: " + jarInput.getName());
+        try {
+            FileUtil.traverseJarClass(jarInput.getFile(), outputJar, (name, bytecode) -> {
+                ClassNode classNode = AsmUtil.convert(bytecode);
+                for (Rewriter rewriter : rewriterSet) {
+                    classNode = rewriter.transform(jarInput, classNode);
+                }
+                return AsmUtil.convert(classNode);
+            });
+
+//            rewriteCache.put(jarInput.getName(), jarInput.getFile());
+        } catch (Throwable e) {
+            project.getLogger().info("[RewritePlugin] fail process jar: " + jarInput.getFile(), e);
+        }
     }
 }

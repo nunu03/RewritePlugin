@@ -2,7 +2,6 @@ package com.coofee.rewrite.reflect;
 
 import com.android.build.api.transform.QualifiedContent;
 import com.android.build.api.transform.TransformInvocation;
-import com.coofee.rewrite.RewriteCache;
 import com.coofee.rewrite.Rewriter;
 
 import org.apache.commons.io.FileUtils;
@@ -34,7 +33,7 @@ public class ReflectRewriter extends Rewriter.Adapter {
     }
 
     @Override
-    public void postTransform(TransformInvocation transformInvocation, RewriteCache rewriteCache) {
+    public void postTransform(TransformInvocation transformInvocation) {
         ReflectResult result = ReflectResult.generate(reflectExtension.myAppPackages, collector.reflectInfoList);
         File resultFile = new File(rootFolder, RESULT_FILE_NAME);
         try {

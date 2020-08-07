@@ -4,7 +4,6 @@ import com.android.build.api.transform.DirectoryInput;
 import com.android.build.api.transform.JarInput;
 import com.android.build.api.transform.QualifiedContent;
 import com.android.build.api.transform.TransformInvocation;
-import com.coofee.rewrite.RewriteCache;
 import com.coofee.rewrite.Rewriter;
 
 import org.objectweb.asm.commons.ClassRemapper;
@@ -63,7 +62,7 @@ public class NineOldAndroidsRewriter extends Rewriter.Adapter {
     }
 
     @Override
-    public void preTransform(TransformInvocation transformInvocation, RewriteCache rewriteCache) {
+    public void preTransform(TransformInvocation transformInvocation) {
         transformInvocation.getInputs().forEach(transformInput -> {
             transformInput.getJarInputs().forEach(jarInput -> {
                 System.out.println("[RewritePlugin] preTransform jarInput name=" + jarInput.getName() + ", file=" + jarInput.getFile());

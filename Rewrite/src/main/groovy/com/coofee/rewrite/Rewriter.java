@@ -8,18 +8,18 @@ import com.android.build.api.transform.TransformInvocation;
 import org.objectweb.asm.tree.ClassNode;
 
 public interface Rewriter {
-    void preTransform(TransformInvocation transformInvocation, RewriteCache rewriteCache);
+    void preTransform(TransformInvocation transformInvocation);
 
     boolean needRemoveDependency(JarInput jarInput, DirectoryInput directoryInput);
 
     ClassNode transform(QualifiedContent input, ClassNode classNode);
 
-    void postTransform(TransformInvocation transformInvocation, RewriteCache rewriteCache);
+    void postTransform(TransformInvocation transformInvocation);
 
     class Adapter implements Rewriter {
 
         @Override
-        public void preTransform(TransformInvocation transformInvocation, RewriteCache rewriteCache) {
+        public void preTransform(TransformInvocation transformInvocation) {
 
         }
 
@@ -34,7 +34,7 @@ public interface Rewriter {
         }
 
         @Override
-        public void postTransform(TransformInvocation transformInvocation, RewriteCache rewriteCache) {
+        public void postTransform(TransformInvocation transformInvocation) {
 
         }
     }

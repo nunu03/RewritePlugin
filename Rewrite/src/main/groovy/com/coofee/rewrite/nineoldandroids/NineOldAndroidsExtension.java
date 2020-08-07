@@ -1,4 +1,7 @@
-package com.coofee.rewrite.nineoldandroids
+package com.coofee.rewrite.nineoldandroids;
+
+import java.util.Objects;
+import java.util.Set;
 
 public class NineOldAndroidsExtension {
     public boolean enable;
