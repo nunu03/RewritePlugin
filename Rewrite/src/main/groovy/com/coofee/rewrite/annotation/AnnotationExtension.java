@@ -11,7 +11,7 @@ public class AnnotationExtension {
     public String toString() {
         return "AnnotationExtension{" +
                 "enable=" + enable +
-                ", annotations=" + excludes +
+                ", excludes=" + excludes +
                 '}';
     }
 }
