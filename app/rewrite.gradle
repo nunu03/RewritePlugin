@@ -41,7 +41,7 @@ rewrite {
     annotation {
         enable = true
 
-        annotations = [
+        excludes = [
                 "Lkotlin/Metadata;"
         ]
     }

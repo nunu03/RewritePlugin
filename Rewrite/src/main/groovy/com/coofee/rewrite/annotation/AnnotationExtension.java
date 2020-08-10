@@ -5,13 +5,13 @@ import java.util.Set;
 public class AnnotationExtension {
     public boolean enable;
 
-    public Set<String> annotations;
+    public Set<String> excludes;
 
     @Override
     public String toString() {
         return "AnnotationExtension{" +
                 "enable=" + enable +
-                ", annotations=" + annotations +
+                ", annotations=" + excludes +
                 '}';
     }
 }

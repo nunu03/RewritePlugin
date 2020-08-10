@@ -47,8 +47,8 @@ public class AnnotationRewriter extends Rewriter.Adapter {
 
     @Override
     public ClassNode transform(QualifiedContent input, ClassNode classNode) {
-        if (annotationExtension.annotations != null && !annotationExtension.annotations.isEmpty()) {
-            int removedCount = removeAnnotations(classNode, annotationExtension.annotations);
+        if (annotationExtension.excludes != null && !annotationExtension.excludes.isEmpty()) {
+            int removedCount = removeAnnotations(classNode, annotationExtension.excludes);
             if (removedCount > 0) {
                 System.out.println("[RewritePlugin] annotation rewriter removed " + removedCount + " annotation from " + classNode.name);
             }
