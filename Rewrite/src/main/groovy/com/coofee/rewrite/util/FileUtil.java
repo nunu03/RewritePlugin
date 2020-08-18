@@ -103,4 +103,27 @@ public class FileUtil {
             IOUtils.closeQuietly(zipOutput);
         }
     }
+
+    public static void traverseJarClass(File inputJar, Consumer<byte[]> byteCodeConsumer) throws Throwable {
+        ZipFile zipFileInput = null;
+
+        try {
+            zipFileInput = new ZipFile(inputJar);
+            Enumeration<? extends ZipEntry> originEntries = zipFileInput.entries();
+            while (originEntries.hasMoreElements()) {
+                ZipEntry originEntry = originEntries.nextElement();
+                final String name = originEntry.getName();
+                byte[] bytecode = new byte[(int) originEntry.getSize()];
+                IOUtils.readFully(zipFileInput.getInputStream(originEntry), bytecode);
+                if (name.endsWith(".class") && ClassUtil.isValidClassBytes(bytecode)) {
+                    byteCodeConsumer.accept(bytecode);
+                }
+            }
+        } catch (Throwable e) {
+            System.out.println("[RewritePlugin] fail processJar jar=" + inputJar);
+            throw e;
+        } finally {
+            IOUtils.closeQuietly(zipFileInput);
+        }
+    }
 }

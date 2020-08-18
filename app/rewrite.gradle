@@ -2,6 +2,8 @@ apply plugin: 'com.coofee.rewrite'
 
 rewrite {
 
+    enableSelfContainedModuleCollector = true
+
     nineOldAndroids {
         enable = true
 

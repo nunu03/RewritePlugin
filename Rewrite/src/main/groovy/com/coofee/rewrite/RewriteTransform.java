@@ -12,6 +12,7 @@ import com.android.build.gradle.internal.pipeline.IntermediateFolderUtils;
 import com.android.build.gradle.internal.pipeline.TransformManager;
 import com.coofee.rewrite.annotation.AnnotationExtension;
 import com.coofee.rewrite.annotation.AnnotationRewriter;
+import com.coofee.rewrite.dependency.SelfContainedModuleCollector;
 import com.coofee.rewrite.nineoldandroids.NineOldAndroidsExtension;
 import com.coofee.rewrite.nineoldandroids.NineOldAndroidsRewriter;
 import com.coofee.rewrite.reflect.ReflectExtension;
@@ -73,6 +74,11 @@ class RewriteTransform extends Transform {
 
         final RewriteExtension rewriteExtension = (RewriteExtension) project.getExtensions().getByName("rewrite");
         System.out.println("[RewritePlugin] rewriteExtension=" + rewriteExtension);
+
+        System.out.println("[RewritePlugin] enableSelfContainedModuleCollector=" + rewriteExtension.enableSelfContainedModuleCollector);
+        if (rewriteExtension.enableSelfContainedModuleCollector) {
+            rewriterSet.add(new SelfContainedModuleCollector(folderUtils.getRootFolder()));
+        }
 
         NineOldAndroidsExtension nineOldAndroids = rewriteExtension.nineOldAndroids;
         System.out.println("[RewritePlugin] nineOldAndroids=" + nineOldAndroids);

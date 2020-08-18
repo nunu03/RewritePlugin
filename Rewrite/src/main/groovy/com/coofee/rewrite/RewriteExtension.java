@@ -24,6 +24,8 @@ import groovy.lang.Closure;
 @JsonAdapter(value = RewriteExtension.RewriteExtensionJsonAdapter.class)
 public class RewriteExtension {
 
+    public boolean enableSelfContainedModuleCollector;
+
     public NineOldAndroidsExtension nineOldAndroids;
 
     public ReflectExtension reflect;

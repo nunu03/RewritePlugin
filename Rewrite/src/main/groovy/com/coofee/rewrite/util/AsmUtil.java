@@ -5,6 +5,12 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.ClassNode;
 
 public class AsmUtil {
+
+    public static String getClassName(byte[] classBytecode) {
+        ClassReader classReader = new ClassReader(classBytecode);
+        return classReader.getClassName();
+    }
+
     public static ClassNode convert(byte[] classBytecode) {
         ClassReader classReader = new ClassReader(classBytecode);
         ClassNode classNode = new ClassNode();
