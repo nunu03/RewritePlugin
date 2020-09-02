@@ -6,9 +6,6 @@ import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.LineNumberNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import org.objectweb.asm.tree.analysis.Analyzer;
-import org.objectweb.asm.tree.analysis.AnalyzerException;
-import org.objectweb.asm.tree.analysis.BasicInterpreter;
 import org.objectweb.asm.tree.analysis.BasicValue;
 import org.objectweb.asm.tree.analysis.Frame;
 
@@ -110,15 +107,6 @@ public class ReflectCollector {
         }
 
         for (MethodNode methodNode : input.methods) {
-            Analyzer<BasicValue> basicValueAnalyzer = new Analyzer<>(new BasicInterpreter());
-            Frame<BasicValue>[] frames = null;
-            try {
-                basicValueAnalyzer.analyze(input.name, methodNode);
-                frames = basicValueAnalyzer.getFrames();
-            } catch (AnalyzerException e) {
-                e.printStackTrace();
-            }
-
             final AbstractInsnNode[] abstractInsnNodes = methodNode.instructions.toArray();
             for (int index = 0; index < abstractInsnNodes.length; index++) {
                 if (!(abstractInsnNodes[index] instanceof MethodInsnNode)) {
@@ -138,7 +126,7 @@ public class ReflectCollector {
                         reflectInfo.methodName = methodNode.name;
                         reflectInfo.lineNumber = getLineNumber(methodInsnNode);
                         reflectInfo.methodDesc = methodNode.desc;
-                        final StackOperands.ResolveResult resolveResult = new StackOperands(methodInsnNode, frames, index).resolve();
+                        final StackOperands.ResolveResult resolveResult = new StackOperands(methodInsnNode).resolve();
                         reflectInfo.exact = resolveResult.exact;
                         reflectInfo.probablyClassList = resolveResult.probablyClassList;
                         System.out.println(reflectInfo.format());

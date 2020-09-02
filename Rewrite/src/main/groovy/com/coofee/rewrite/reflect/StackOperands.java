@@ -7,8 +7,6 @@ import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.LineNumberNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.VarInsnNode;
-import org.objectweb.asm.tree.analysis.BasicValue;
-import org.objectweb.asm.tree.analysis.Frame;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,14 +17,8 @@ public class StackOperands {
 
     private final MethodInsnNode insnNode;
 
-    private final Frame<BasicValue>[] frames;
-
-    private final int index;
-
-    public StackOperands(MethodInsnNode insnNode, Frame<BasicValue>[] frames, int index) {
+    public StackOperands(MethodInsnNode insnNode) {
         this.insnNode = insnNode;
-        this.frames = frames;
-        this.index = index;
     }
 
     private static AbstractInsnNode skipLineNumberOrLabelNode(AbstractInsnNode insnNode) {
@@ -37,12 +29,8 @@ public class StackOperands {
         return previous;
     }
 
-    private static List<String> resolveProbablyClassList(MethodInsnNode insnNode, Frame<BasicValue>[] frames, int index) {
+    private static List<String> resolveProbablyClassList(MethodInsnNode insnNode) {
         List<String> probablyClassList = new ArrayList<>();
-
-        final Frame<BasicValue> currentFrame = frames[index];
-        final int stackSize = currentFrame.getStackSize();
-//        System.out.println("stackSize=" + stackSize);
 
         for (AbstractInsnNode previous = insnNode.getPrevious();
              previous != null;
@@ -63,20 +51,11 @@ public class StackOperands {
         ResolveResult resolveResult = new ResolveResult();
         resolveResult.probablyClassList = new ArrayList<>();
 
-
-        final int stackSize = frames[index].getStackSize();
-//        System.out.println("stackSize=" + stackSize);
-
-//        String operand = null;
-//        if (stackSize == 1 || stackSize == 2) {
-//            operand = resolveOneStringOperand();
-//        }
-
         String operand = resolveOneStringOperand();
 
         if (operand == null) {
             resolveResult.exact = false;
-            resolveResult.probablyClassList.addAll(resolveProbablyClassList(insnNode, frames, index));
+            resolveResult.probablyClassList.addAll(resolveProbablyClassList(insnNode));
         } else {
             resolveResult.exact = true;
             resolveResult.probablyClassList.add(operand);
