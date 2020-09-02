@@ -110,6 +110,10 @@ public class SelfContainedModuleCollector extends Rewriter.Adapter {
             }
         }
 
+        // TODO exclude specific module;
+
+        // TODO how to solve custom view reference in xml layout?
+
         System.out.println("[RewritePlugin] self contained collector modules=" + selfContainedModule);
     }
 
