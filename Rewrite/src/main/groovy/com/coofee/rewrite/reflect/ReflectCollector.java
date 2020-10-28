@@ -101,7 +101,7 @@ public class ReflectCollector {
         return index <= top ? f.getStack(top - index) : null;
     }
 
-    public ClassNode transform(ClassNode input) {
+    public ClassNode transform(String moduleName, ClassNode input) {
         if (input.methods == null || input.methods.isEmpty()) {
             return input;
         }
@@ -121,6 +121,7 @@ public class ReflectCollector {
 
                     if (methods != null && methods.contains(methodInsnNode.name)) {
                         ReflectInfo reflectInfo = new ReflectInfo();
+                        reflectInfo.moduleName = moduleName;
                         reflectInfo.reflectInfo = owner.substring(owner.lastIndexOf('/') + 1) + "." + methodInsnNode.name + "()";
                         reflectInfo.className = input.name;
                         reflectInfo.methodName = methodNode.name;
@@ -141,6 +142,8 @@ public class ReflectCollector {
     }
 
     public static class ReflectInfo {
+        public String moduleName;
+
         public String reflectInfo;
 
         public String className;
@@ -156,7 +159,7 @@ public class ReflectCollector {
         public List<String> probablyClassList;
 
         public String format() {
-            return String.format("%s accessed by %s.%s(#%d), method.desc=%s, exact=%s, probablyClassList=%s", reflectInfo, className, methodName, lineNumber, methodDesc, exact, probablyClassList);
+            return String.format("%s accessed by %s.%s(#%d) in %s, method.desc=%s, exact=%s, probablyClassList=%s", reflectInfo, className, methodName, lineNumber, moduleName, methodDesc, exact, probablyClassList);
         }
     }
 }

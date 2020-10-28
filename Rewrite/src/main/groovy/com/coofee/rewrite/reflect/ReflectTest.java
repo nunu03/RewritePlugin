@@ -22,7 +22,7 @@ public class ReflectTest {
 
         String classPath = "/" + ReflectTest.class.getName().replace(".", "/") + ".class";
         byte[] classBytes = IOUtils.toByteArray(ReflectTest.class.getResourceAsStream(classPath));
-        reflectCollector.transform(AsmUtil.convert(classBytes));
+        reflectCollector.transform("", AsmUtil.convert(classBytes));
 
         final ReflectResult result = ReflectResult.generate(new HashSet<>(), reflectCollector.reflectInfoList);
         String json = result.toJson();

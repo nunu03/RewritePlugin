@@ -28,7 +28,7 @@ public class ReflectRewriter extends Rewriter.Adapter {
 
     @Override
     public ClassNode transform(QualifiedContent input, ClassNode classNode) {
-        collector.transform(classNode);
+        collector.transform(input.getName(), classNode);
         return classNode;
     }
 
