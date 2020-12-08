@@ -33,9 +33,27 @@ repositories {
     jcenter()
 }
 
+
+println("env=${System.getenv()}")
+println("username=${project.findProperty("gpr.user") ?: "coofee"}")
+println("password=${project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES_TOKEN")}")
+
+// https://docs.github.com/cn/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-gradle-for-use-with-github-packages
 publishing {
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/coofee/RewritePlugin")
+            credentials {
+                username = project.findProperty("gpr.user") ?: "coofee"
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES_TOKEN")
+            }
+        }
+    }
+
     publications {
-        maven(MavenPublication) {
+        gpr(MavenPublication) {
             groupId = 'com.coofee.rewrite'
             artifactId = 'rewrite'
             version = '1.0.0'
