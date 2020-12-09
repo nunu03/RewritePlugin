@@ -1,10 +1,22 @@
 //apply plugin: 'groovy'
 //apply plugin: 'maven-publish'
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.2'
+    }
+}
+
 plugins {
     id 'groovy'
     id 'java-gradle-plugin'
     id 'maven-publish'
+    id 'maven'
 }
 
 gradlePlugin {
@@ -34,33 +46,55 @@ repositories {
 }
 
 
-println("env=${System.getenv()}")
-println("username=${project.findProperty("gpr.user") ?: "coofee"}")
-println("password=${project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES_TOKEN")}")
+//println("env=${System.getenv()}")
+//println("username=${project.findProperty("gpr.user") ?: "coofee"}")
+//println("password=${project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES_TOKEN")}")
+//
+//// https://docs.github.com/cn/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-gradle-for-use-with-github-packages
+//publishing {
+//
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//            url = uri("https://maven.pkg.github.com/coofee/RewritePlugin")
+//            credentials {
+//                username = project.findProperty("gpr.user") ?: "coofee"
+//                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES_TOKEN")
+//            }
+//        }
+//    }
+//
+//    publications {
+//        gpr(MavenPublication) {
+//            groupId = 'com.coofee.rewrite'
+//            artifactId = 'rewrite'
+//            version = '1.0.0'
+//
+//            from components.java
+//        }
+//    }
+//}
 
-// https://docs.github.com/cn/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-gradle-for-use-with-github-packages
-publishing {
 
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/coofee/RewritePlugin")
-            credentials {
-                username = project.findProperty("gpr.user") ?: "coofee"
-                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGES_TOKEN")
-            }
-        }
-    }
 
-    publications {
-        gpr(MavenPublication) {
-            groupId = 'com.coofee.rewrite'
-            artifactId = 'rewrite'
-            version = '1.0.0'
+// https://github.com/novoda/bintray-release
+// ./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+// 使用的时候需要添加这个maven
+// maven {
+//     url "https://orgcoofee.bintray.com/coofee"
+// }
 
-            from components.java
-        }
-    }
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'orgcoofee'
+    repoName = 'coofee'
+    groupId = 'com.coofee'
+    artifactId = 'rewrite'
+    publishVersion = '0.0.1'
+    desc = 'android gradle plugin support transform class bytecode by asm'
+    website = 'https://github.com/coofee/RewritePlugin'
+    licences = ['Apache-2.0']
 }
 
 
