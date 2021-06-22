@@ -1,13 +1,6 @@
 package com.coofee.rewrite;
 
-import com.android.build.api.transform.DirectoryInput;
-import com.android.build.api.transform.Format;
-import com.android.build.api.transform.JarInput;
-import com.android.build.api.transform.QualifiedContent;
-import com.android.build.api.transform.Status;
-import com.android.build.api.transform.Transform;
-import com.android.build.api.transform.TransformInvocation;
-import com.android.build.api.transform.TransformOutputProvider;
+import com.android.build.api.transform.*;
 import com.android.build.gradle.internal.pipeline.IntermediateFolderUtils;
 import com.android.build.gradle.internal.pipeline.TransformManager;
 import com.coofee.rewrite.annotation.AnnotationExtension;
@@ -17,10 +10,9 @@ import com.coofee.rewrite.nineoldandroids.NineOldAndroidsExtension;
 import com.coofee.rewrite.nineoldandroids.NineOldAndroidsRewriter;
 import com.coofee.rewrite.reflect.ReflectExtension;
 import com.coofee.rewrite.reflect.ReflectRewriter;
-import com.coofee.rewrite.util.AsmUtil;
-import com.coofee.rewrite.util.ClassUtil;
-import com.coofee.rewrite.util.FileUtil;
-import com.coofee.rewrite.util.ReflectUtil;
+import com.coofee.rewrite.replace.ReplaceMethodExtension;
+import com.coofee.rewrite.replace.ReplaceMethodWriter;
+import com.coofee.rewrite.util.*;
 
 import org.apache.commons.io.FileUtils;
 import org.gradle.api.Project;
@@ -28,7 +20,9 @@ import org.objectweb.asm.tree.ClassNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLClassLoader;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -37,6 +31,7 @@ class RewriteTransform extends Transform {
     private final Project project;
     private final Set<Rewriter> rewriterSet = new HashSet<>();
 //    private RewriteCache rewriteCache;
+    private URLClassLoader classLoader;
 
     public RewriteTransform(Project project) {
         this.project = project;
@@ -67,6 +62,10 @@ class RewriteTransform extends Transform {
 
     @Override
     public void transform(TransformInvocation transformInvocation) throws IOException {
+        List<TransformInput> transformInputs = TransformInputUtil.listOf(transformInvocation.getInputs(), transformInvocation.getReferencedInputs());
+        List<File> files = TransformInputUtil.files(transformInputs);
+        this.classLoader = FileUtil.from(files.toArray(new File[0]));
+
         final TransformOutputProvider outputProvider = transformInvocation.getOutputProvider();
 
         final IntermediateFolderUtils folderUtils = ReflectUtil.getFieldValue(outputProvider, "folderUtils");
@@ -96,6 +95,11 @@ class RewriteTransform extends Transform {
         System.out.println("[RewritePlugin] annotation=" + annotation);
         if (annotation != null && annotation.enable) {
             rewriterSet.add(new AnnotationRewriter(annotation));
+        }
+
+        ReplaceMethodExtension replaceMethod = rewriteExtension.replaceMethod;
+        if (replaceMethod != null && replaceMethod.enable) {
+            rewriterSet.add(new ReplaceMethodWriter(replaceMethod, this.classLoader));
         }
 
 //        final File cacheFile = new File(folderUtils.getRootFolder(), RewriteCache.CACHE_FILE_NAME);

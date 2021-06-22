@@ -36,11 +36,11 @@ rewrite {
 
         classAndMethods = [
                 // collect reflect info.
-                "java/lang/Class"      : ["forName"],
-                "java/lang/ClassLoader": ["loadClass"],
+                "java/lang/Class"      : ["forName"] as Set,
+                "java/lang/ClassLoader": ["loadClass"] as Set,
 
                 // collect so library.
-                "java/lang/System"     : ["load", "loadLibrary"],
+                "java/lang/System"     : ["load", "loadLibrary"] as Set,
         ]
     }
 

@@ -12,4 +12,24 @@ public class StringUtil {
         }
         return new String(result);
     }
+
+    public static String replace(String origin, char place, char replace) {
+        if (isEmpty(origin)) {
+            return null;
+        }
+
+        return origin.replace(place, replace);
+    }
+
+    public static boolean isEmpty(String str) {
+        return str == null || str.isEmpty();
+    }
+
+    public static boolean equals(String lhs, String rhs) {
+        if (lhs == null && rhs == null) {
+            return true;
+        }
+        
+        return lhs != null && lhs.equals(rhs);
+    }
 }

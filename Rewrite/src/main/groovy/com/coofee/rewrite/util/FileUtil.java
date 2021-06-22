@@ -1,5 +1,6 @@
 package com.coofee.rewrite.util;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.gradle.internal.util.BiFunction;
 
@@ -9,6 +10,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.security.MessageDigest;
 import java.util.Enumeration;
 import java.util.function.Consumer;
@@ -17,6 +21,19 @@ import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
 public class FileUtil {
+
+    public static URLClassLoader from(File... files) throws MalformedURLException {
+        if (files == null || files.length < 1) {
+            return null;
+        }
+
+        URL[] urls = new URL[files.length];
+        for (int i = 0; i < files.length; i++) {
+            urls[i] = files[i].toURI().toURL();
+        }
+
+        return new URLClassLoader(urls);
+    }
 
     public static void eachFileRecurse(File file, Consumer<File> fileConsumer) {
         if (file == null || !file.exists()) {

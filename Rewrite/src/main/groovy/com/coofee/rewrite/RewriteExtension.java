@@ -3,6 +3,7 @@ package com.coofee.rewrite;
 import com.coofee.rewrite.annotation.AnnotationExtension;
 import com.coofee.rewrite.nineoldandroids.NineOldAndroidsExtension;
 import com.coofee.rewrite.reflect.ReflectExtension;
+import com.coofee.rewrite.replace.ReplaceMethodExtension;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -31,6 +32,8 @@ public class RewriteExtension {
     public ReflectExtension reflect;
 
     public AnnotationExtension annotation;
+
+    public ReplaceMethodExtension replaceMethod;
 
     public RewriteExtension() {
         System.out.println("[RewritePlugin] call RewriteExtension.constructor() method...");
@@ -74,27 +77,38 @@ public class RewriteExtension {
         return annotation;
     }
 
+    public ReplaceMethodExtension replaceMethod(Closure closure) {
+        System.out.println("[RewritePlugin] call RewriteExtension.replaceMethod() method...");
+        if (replaceMethod == null) {
+            replaceMethod = new ReplaceMethodExtension();
+        }
+
+        ConfigureUtil.configure(closure, replaceMethod);
+        replaceMethod.parseConfigFile();
+        return replaceMethod;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RewriteExtension that = (RewriteExtension) o;
-        return Objects.equals(nineOldAndroids, that.nineOldAndroids) &&
-                Objects.equals(reflect, that.reflect) &&
-                Objects.equals(annotation, that.annotation);
+        return enableSelfContainedModuleCollector == that.enableSelfContainedModuleCollector && Objects.equals(nineOldAndroids, that.nineOldAndroids) && Objects.equals(reflect, that.reflect) && Objects.equals(annotation, that.annotation) && Objects.equals(replaceMethod, that.replaceMethod);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nineOldAndroids, reflect, annotation);
+        return Objects.hash(enableSelfContainedModuleCollector, nineOldAndroids, reflect, annotation, replaceMethod);
     }
 
     @Override
     public String toString() {
         return "RewriteExtension{" +
-                "nineOldAndroids=" + nineOldAndroids +
+                "enableSelfContainedModuleCollector=" + enableSelfContainedModuleCollector +
+                ", nineOldAndroids=" + nineOldAndroids +
                 ", reflect=" + reflect +
                 ", annotation=" + annotation +
+                ", replaceMethod=" + replaceMethod +
                 '}';
     }
 

@@ -1,0 +1,29 @@
+// 移除元素
+
+allprojects {
+
+    afterEvaluate {
+        tasks.whenTaskAdded { task ->
+            if (task.name.contains("Test")) {
+                task.enabled = false
+            }
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force "androidx.appcompat:appcompat:${supportLibVersion}"
+        }
+
+        exclude group: "androidx.documentfile", module: "documentfile"
+        exclude group: "androidx.print", module: "androidx.print"
+        exclude group: "androidx.media", module: "media"
+//        exclude group: "androidx.loader", module: "loader"
+        exclude group: "androidx.cursoradapter", module: "cursoradapter"
+        exclude group: "androidx.gridlayout", module: "gridlayout"
+//        exclude group: "androidx.interpolator", module: "interpolator"
+//        exclude group: "androidx.vectordrawable", module: "vectordrawable"
+        exclude group: "androidx.vectordrawable", module: "vectordrawable-animated"
+        exclude group: "com.squareup", module: "otto"
+    }
+}

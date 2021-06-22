@@ -14,7 +14,7 @@ public class AsmUtil {
     public static ClassNode convert(byte[] classBytecode) {
         ClassReader classReader = new ClassReader(classBytecode);
         ClassNode classNode = new ClassNode();
-        classReader.accept(classNode, 0);
+        classReader.accept(classNode, ClassReader.EXPAND_FRAMES);
         return classNode;
     }
 
