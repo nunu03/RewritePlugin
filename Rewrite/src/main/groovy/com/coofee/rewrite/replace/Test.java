@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Test {
     public static void main(String[] args) {
-        String json ="[\n" +
+        String json = "[\n" +
                 "    {\n" +
                 "        \"src_class\": \"android.content.Context\",\n" +
                 "        \"dest_class\": \"com.xx.xx.ShadowSharedPreferences\",\n" +
@@ -29,6 +29,7 @@ public class Test {
                 "]\n" +
                 "\n";
 
+        System.out.println(json);
         Set<ReplaceMethodInfo> replaceMethodInfos = ReplaceMethodExtension.ReplaceMethodJsonInfo.fromJson(json);
         System.out.println("size=" + replaceMethodInfos.size() + ", content=" + replaceMethodInfos);
 

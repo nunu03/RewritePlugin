@@ -52,3 +52,15 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 
 }
+
+afterEvaluate {
+    println("android.compileSdkVersion=${android.compileSdkVersion}, android.sdkDirectory=${android.sdkDirectory}")
+
+    Properties props = new Properties()
+    props.load(new File(rootProject.rootDir, "local.properties").newReader("utf-8"))
+    String sdkDirPath = props.getProperty('sdk.dir')
+    println("sdkDirPath=${sdkDirPath}")
+
+    File androidJarFile = new File(sdkDirPath, "platforms/${android.compileSdkVersion}/android.jar")
+    println("androidJarFile=${androidJarFile}, exists=${androidJarFile.exists()}")
+}

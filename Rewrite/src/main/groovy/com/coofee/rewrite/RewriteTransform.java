@@ -1,6 +1,7 @@
 package com.coofee.rewrite;
 
 import com.android.build.api.transform.*;
+import com.android.build.gradle.AppExtension;
 import com.android.build.gradle.internal.pipeline.IntermediateFolderUtils;
 import com.android.build.gradle.internal.pipeline.TransformManager;
 import com.coofee.rewrite.annotation.AnnotationExtension;
@@ -28,13 +29,15 @@ import java.util.Set;
 
 class RewriteTransform extends Transform {
 
+    private final AppExtension appExtension;
     private final Project project;
     private final Set<Rewriter> rewriterSet = new HashSet<>();
-//    private RewriteCache rewriteCache;
+    //    private RewriteCache rewriteCache;
     private URLClassLoader classLoader;
 
-    public RewriteTransform(Project project) {
+    public RewriteTransform(Project project, AppExtension appExtension) {
         this.project = project;
+        this.appExtension = appExtension;
 
         final RewriteExtension rewriteExtension = (RewriteExtension) project.getExtensions().getByName("rewrite");
         System.out.println("[RewritePlugin] rewriteExtension=" + rewriteExtension);
@@ -64,6 +67,9 @@ class RewriteTransform extends Transform {
     public void transform(TransformInvocation transformInvocation) throws IOException {
         List<TransformInput> transformInputs = TransformInputUtil.listOf(transformInvocation.getInputs(), transformInvocation.getReferencedInputs());
         List<File> files = TransformInputUtil.files(transformInputs);
+        File androidLibraryJar = new File(appExtension.getSdkDirectory(), "platforms/" + appExtension.getCompileSdkVersion() + "/android.jar");
+        files.add(0, androidLibraryJar);
+        System.out.println("[RewritePlugin] classLoader files=" + files);
         this.classLoader = FileUtil.from(files.toArray(new File[0]));
 
         final TransformOutputProvider outputProvider = transformInvocation.getOutputProvider();

@@ -51,4 +51,14 @@ rewrite {
                 "Lkotlin/Metadata;"
         ]
     }
+
+    replaceMethod {
+        enable = true
+
+        excludes = [
+                'com/coofee/rewrite/hook/'
+        ]
+
+        configFile = file("replace_method.json")
+    }
 }

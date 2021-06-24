@@ -25,7 +25,7 @@ public class RewritePlugin implements Plugin<Project> {
             println("${new Gson().toJson(project.rewrite)}")
 
             AppExtension android = project.extensions.getByType(AppExtension)
-            android.registerTransform(new RewriteTransform(project))
+            android.registerTransform(new RewriteTransform(project, android))
         }
     }
 

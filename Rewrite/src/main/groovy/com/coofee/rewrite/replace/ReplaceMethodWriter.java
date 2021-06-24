@@ -74,7 +74,7 @@ public class ReplaceMethodWriter extends Rewriter.Adapter {
 //                        String shadowName = "transform";
 //                        String shadowDesc = "(Lcom/coofee/rewrite/Rewriter;Lcom/android/build/api/transform/QualifiedContent;Lorg/objectweb/asm/tree/ClassNode;)Lorg/objectweb/asm/tree/ClassNode;";
                         insnNode.setOpcode(Opcodes.INVOKESTATIC);
-                        insnNode.owner = matchedMethodInfo.srcClass;
+                        insnNode.owner = matchedMethodInfo.destClass;
                         insnNode.name = matchedMethodInfo.destMethod.getName();
                         insnNode.desc = matchedMethodInfo.destMethod.getDescriptor();
                     }

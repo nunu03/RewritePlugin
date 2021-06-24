@@ -30,15 +30,15 @@ gradlePlugin {
 }
 
 dependencies {
-    compile localGroovy()
-    compile gradleApi()
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.tools.build:gradle:3.4.1'
-    implementation 'com.android.tools.build:gradle-api:3.4.1'
+    implementation localGroovy()
+    implementation gradleApi()
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly 'com.android.tools.build:gradle:3.4.3'
+    compileOnly 'com.android.tools.build:gradle-api:3.4.3'
 
-    compile group: 'org.ow2.asm', name: 'asm-commons', version: '7.0'
-    compile group: 'org.apache.maven.shared', name: 'maven-dependency-analyzer', version: '1.11.1'
-    compile 'com.google.code.gson:gson:2.8.5'
+    implementation group: 'org.ow2.asm', name: 'asm-commons', version: '7.0'
+    implementation group: 'org.apache.maven.shared', name: 'maven-dependency-analyzer', version: '1.11.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
 
 compileJava {
@@ -54,6 +54,38 @@ compileGroovy {
 repositories {
     google()
     jcenter()
+}
+
+
+publishing {
+    repositories {
+        maven {
+
+        }
+    }
+
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.coofee.rewrite'
+            artifactId = 'rewrite'
+            version = '1.0.0'
+            from components.java
+        }
+    }
+
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri(MAVEN_URL)) {
+            authentication(userName: MAVEN_USERNAME, password: MAVEN_PASSWORD)
+        }
+
+        pom.groupId = 'com.coofee.rewrite'
+        pom.artifactId = 'rewrite'
+        pom.version = '0.0.4'
+        pom.packaging = "aar"
+    }
 }
 
 
@@ -85,7 +117,6 @@ repositories {
 //        }
 //    }
 //}
-
 
 
 // https://github.com/novoda/bintray-release

@@ -1,0 +1,36 @@
+[
+  {
+    "src_class": "android.content.Context",
+    "dest_class": "com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences",
+    "methods": [
+      {
+        "src_method": "android.content.SharedPreferences getSharedPreferences(java.lang.String, int)",
+        "dest_method": "android.content.SharedPreferences getSharedPreferences(android.content.Context, java.lang.String, int)"
+      },
+      {
+        "src_method": "android.content.SharedPreferences getSharedPreferences(java.io.File, int)",
+        "dest_method": "android.content.SharedPreferences getSharedPreferences(android.content.Context, java.io.File, int)"
+      }
+    ]
+  },
+  {
+    "src_class": "android.preference.PreferenceManager",
+    "dest_class": "com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences",
+    "methods": [
+      {
+        "src_method": "android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)",
+        "dest_method": "android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)"
+      },
+      {
+        "src_method": "java.lang.String getDefaultSharedPreferencesName(android.content.Context)",
+        "dest_method": "java.lang.String getDefaultSharedPreferencesName(android.content.Context)"
+      }
+    ]
+  },
+  {
+    "src_class": "android.app.Activity",
+    "src_method": "android.content.SharedPreferences getPreferences(int)",
+    "dest_class": "com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences",
+    "dest_method": "android.content.SharedPreferences getPreferences(android.app.Activity, int)"
+  }
+]
