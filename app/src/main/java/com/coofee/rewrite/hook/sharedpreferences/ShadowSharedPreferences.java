@@ -14,26 +14,37 @@ public class ShadowSharedPreferences {
 
     public static boolean useSystem = false;
 
+    public static boolean useProxy = true;
+
+    private static SharedPreferences proxy(String name, SharedPreferences sharedPreferences) {
+        if (useProxy) {
+            return new SharedPreferencesProxy(name, sharedPreferences);
+        }
+
+        return sharedPreferences;
+    }
+
     public static SharedPreferences getSharedPreferences(final Context context, String name, final int mode) {
         if (TextUtils.isEmpty(name)) {
             name = "null";
         }
 
         if (useSystem) {
-            return context.getSharedPreferences(name, mode);
+            return proxy(name, context.getSharedPreferences(name, mode));
         }
 
         Log.e("ShadowSharedPreferences", "getSharedPreferences; context=" + context + ", name=" + name + ", mode=" + mode);
-        return BoosterSharedPreferences.getSharedPreferences(context, name);
+        return proxy(name, BoosterSharedPreferences.getSharedPreferences(context, name));
     }
 
     public static SharedPreferences getDefaultSharedPreferences(Context context) {
+        String name = getDefaultSharedPreferencesName(context);
         if (useSystem) {
-            return PreferenceManager.getDefaultSharedPreferences(context);
+            return proxy(name, PreferenceManager.getDefaultSharedPreferences(context));
         }
 
         Log.e("ShadowSharedPreferences", "getDefaultSharedPreferences; context=" + context);
-        return BoosterSharedPreferences.getSharedPreferences(context, getDefaultSharedPreferencesName(context));
+        return proxy(name, BoosterSharedPreferences.getSharedPreferences(context, name));
     }
 
     public static String getDefaultSharedPreferencesName(Context context) {

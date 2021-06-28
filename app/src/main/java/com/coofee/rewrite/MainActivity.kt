@@ -2,10 +2,11 @@ package com.coofee.rewrite
 
 import android.content.Context
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
+import androidx.appcompat.app.AppCompatActivity
 import com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences
+import com.coofee.rewrite.hook.sharedpreferences.SharedPreferencesProxy
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         test_Activity_getSharedPreferences_int()
 
         test_PreferenceManager_getSharedPreferences_string()
+
+        SharedPreferencesProxy.print()
     }
 
     private fun test_Context_getSharedPreferences_string() {
