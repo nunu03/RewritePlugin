@@ -53,12 +53,26 @@ public class ReplaceMethodWriter extends Rewriter.Adapter {
 
     @Override
     public ClassNode transform(QualifiedContent input, ClassNode classNode) {
+        final String className = classNode.name;
+        if (this.mReplaceMethodExtension.isExcluded(className)) {
+            return classNode;
+        }
+
+        final String moduleName = input.getName();
+        final String sourceFile = classNode.sourceFile;
+
         List<MethodNode> methods = classNode.methods;
         for (MethodNode methodNode : methods) {
             InsnList instructions = methodNode.instructions;
             ListIterator<AbstractInsnNode> iterator = instructions.iterator();
+            int lineNo = -1;
             while (iterator.hasNext()) {
                 AbstractInsnNode next = iterator.next();
+
+                if (next instanceof LineNumberNode) {
+                    lineNo = ((LineNumberNode) next).line;
+                }
+
                 if (next instanceof MethodInsnNode) {
                     MethodInsnNode insnNode = (MethodInsnNode) next;
                     if (this.mReplaceMethodExtension.isExcluded(insnNode.owner)) {
@@ -67,7 +81,13 @@ public class ReplaceMethodWriter extends Rewriter.Adapter {
 
                     ReplaceMethodInfo matchedMethodInfo = findReplaceMethodInfo(insnNode.owner, insnNode.name, insnNode.desc);
                     if (matchedMethodInfo != null) {
-                        System.out.println("[RewritePlugin] replace owner=" + insnNode.owner + ", method=" + insnNode.name + ", desc=" + insnNode.desc +
+                        String methodName = methodNode.name;
+                        String methodDesc = methodNode.desc;
+                        String methodSignature = methodNode.signature;
+                        System.out.println("[RewritePlugin] replace moduleName=" + moduleName + ", sourceFile=" + sourceFile + ", lineNo=" + lineNo +
+                                ", className=" + StringUtil.replace(className, '/', '.') +
+                                ", methodName=" + methodName + ", methodDesc=" + methodDesc + ", methodSignature=" + methodSignature +
+                                "; owner=" + insnNode.owner + ", method=" + insnNode.name + ", desc=" + insnNode.desc +
                                 " by owner=" + matchedMethodInfo.destClass + ", method=" + matchedMethodInfo.destMethod.getName() + ", desc=" + matchedMethodInfo.destMethod.getDescriptor()
                         );
 //                        String shadowOwner = "com/coofee/rewrite/Shadow";

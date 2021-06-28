@@ -1,5 +1,6 @@
 package com.coofee.rewrite;
 
+import com.android.sdklib.ISystemImage;
 import com.coofee.rewrite.annotation.AnnotationExtension;
 import com.coofee.rewrite.nineoldandroids.NineOldAndroidsExtension;
 import com.coofee.rewrite.reflect.ReflectExtension;
@@ -45,6 +46,8 @@ public class RewriteExtension {
             nineOldAndroids = new NineOldAndroidsExtension();
         }
         org.gradle.util.ConfigureUtil.configure(closure, nineOldAndroids);
+
+        System.out.println("[RewritePlugin] nineOldAndroids=" + nineOldAndroids);
         return nineOldAndroids;
     }
 
@@ -64,6 +67,7 @@ public class RewriteExtension {
             }
         }
 
+        System.out.println("[RewritePlugin] reflect=" + reflect);
         return reflect;
     }
 
@@ -74,6 +78,7 @@ public class RewriteExtension {
         }
 
         ConfigureUtil.configure(closure, annotation);
+        System.out.println("[RewritePlugin] annotation=" + annotation);
         return annotation;
     }
 
@@ -85,6 +90,7 @@ public class RewriteExtension {
 
         ConfigureUtil.configure(closure, replaceMethod);
         replaceMethod.parseConfigFile();
+        System.out.println("[RewritePlugin] replaceMethod=" + replaceMethod);
         return replaceMethod;
     }
 

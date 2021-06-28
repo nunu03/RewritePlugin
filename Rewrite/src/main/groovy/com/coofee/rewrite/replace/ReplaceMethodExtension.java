@@ -58,6 +58,7 @@ public class ReplaceMethodExtension {
 
         for (String exclude : this.excludes) {
             if (clazz.startsWith(exclude)) {
+                System.out.println("[RewritePlugin] isExcluded=true; clazz=" + clazz + ", excludes=" + excludes);
                 return true;
             }
         }
@@ -84,6 +85,7 @@ public class ReplaceMethodExtension {
                 "enable=" + enable +
                 ", excludes=" + excludes +
                 ", configFile='" + configFile + '\'' +
+                ", replaceMethodInfoSet=" + replaceMethodInfoSet +
                 '}';
     }
 

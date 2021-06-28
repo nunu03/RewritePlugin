@@ -5,6 +5,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
+import com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,5 +42,12 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             val defaultSharedPreferencesName = PreferenceManager.getDefaultSharedPreferencesName(this)
         }
+    }
+
+    private fun test_shadow_preferences() {
+        ShadowSharedPreferences.getSharedPreferences(this, "shadow", Context.MODE_PRIVATE)
+            .edit()
+            .putBoolean("test_shadow_preferences", true)
+            .commit()
     }
 }
