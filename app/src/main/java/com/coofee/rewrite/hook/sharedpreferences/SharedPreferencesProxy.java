@@ -9,6 +9,20 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class SharedPreferencesProxy implements SharedPreferences {
 
+    public static final Object EMPTY = new Object();
+
+    public static Object emptyIfNull(Object value) {
+        if (value == null) {
+            return EMPTY;
+        }
+
+        return value;
+    }
+
+    public static Object nullIfEmpty(Object value) {
+        return (value == EMPTY ? null : value);
+    }
+
     private static final Map<String, Map<String, Object>> sStatsMap = new ConcurrentHashMap<>();
 
     public static Map<String, Map<String, Object>> snapshot() {
@@ -25,7 +39,7 @@ public class SharedPreferencesProxy implements SharedPreferences {
             Log.d("SharedPreferencesProxy", "share preferences name=" + entry.getKey() + ", count=" + sharedPreferencesValues.size());
 
             for (Map.Entry<String, Object> keyAndValue : sharedPreferencesValues.entrySet()) {
-                Log.d("SharedPreferencesProxy", "\taccess key=" + keyAndValue.getKey());
+                Log.d("SharedPreferencesProxy", "\taccess key=" + keyAndValue.getKey() + ", value=" + nullIfEmpty(keyAndValue.getValue()));
             }
         }
 
@@ -57,7 +71,7 @@ public class SharedPreferencesProxy implements SharedPreferences {
     @Override
     public String getString(String key, @Nullable String defValue) {
         String value = sharedPreferences.getString(key, defValue);
-        keyAndValueMap.put(key, value);
+        keyAndValueMap.put(key, emptyIfNull(value));
         return value;
     }
 
@@ -65,41 +79,41 @@ public class SharedPreferencesProxy implements SharedPreferences {
     @Override
     public Set<String> getStringSet(String key, @Nullable Set<String> defValues) {
         Set<String> value = sharedPreferences.getStringSet(key, defValues);
-        keyAndValueMap.put(key, value);
+        keyAndValueMap.put(key, emptyIfNull(value));
         return value;
     }
 
     @Override
     public int getInt(String key, int defValue) {
         int value = sharedPreferences.getInt(key, defValue);
-        keyAndValueMap.put(key, value);
+        keyAndValueMap.put(key, emptyIfNull(value));
         return value;
     }
 
     @Override
     public long getLong(String key, long defValue) {
         long value = sharedPreferences.getLong(key, defValue);
-        keyAndValueMap.put(key, value);
+        keyAndValueMap.put(key, emptyIfNull(value));
         return value;
     }
 
     @Override
     public float getFloat(String key, float defValue) {
         float value = sharedPreferences.getFloat(key, defValue);
-        keyAndValueMap.put(key, value);
+        keyAndValueMap.put(key, emptyIfNull(value));
         return value;
     }
 
     @Override
     public boolean getBoolean(String key, boolean defValue) {
         boolean value = sharedPreferences.getBoolean(key, defValue);
-        keyAndValueMap.put(key, value);
+        keyAndValueMap.put(key, emptyIfNull(value));
         return value;
     }
 
     @Override
     public boolean contains(String key) {
-        keyAndValueMap.put(key, null);
+        keyAndValueMap.put(key, new Object());
         return sharedPreferences.contains(key);
     }
 
@@ -130,43 +144,43 @@ public class SharedPreferencesProxy implements SharedPreferences {
 
         @Override
         public Editor putString(String key, @Nullable String value) {
-            keyAndValueMap.put(key, value);
+            keyAndValueMap.put(key, emptyIfNull(value));
             return editor.putString(key, value);
         }
 
         @Override
         public Editor putStringSet(String key, @Nullable Set<String> values) {
-            keyAndValueMap.put(key, values);
+            keyAndValueMap.put(key, emptyIfNull(values));
             return editor.putStringSet(key, values);
         }
 
         @Override
         public Editor putInt(String key, int value) {
-            keyAndValueMap.put(key, value);
+            keyAndValueMap.put(key, emptyIfNull(value));
             return editor.putInt(key, value);
         }
 
         @Override
         public Editor putLong(String key, long value) {
-            keyAndValueMap.put(key, value);
+            keyAndValueMap.put(key, emptyIfNull(value));
             return editor.putLong(key, value);
         }
 
         @Override
         public Editor putFloat(String key, float value) {
-            keyAndValueMap.put(key, value);
+            keyAndValueMap.put(key, emptyIfNull(value));
             return editor.putFloat(key, value);
         }
 
         @Override
         public Editor putBoolean(String key, boolean value) {
-            keyAndValueMap.put(key, value);
+            keyAndValueMap.put(key, emptyIfNull(value));
             return editor.putBoolean(key, value);
         }
 
         @Override
         public Editor remove(String key) {
-            keyAndValueMap.put(key, null);
+            keyAndValueMap.put(key, emptyIfNull(null));
             return editor.remove(key);
         }
 
@@ -185,4 +199,5 @@ public class SharedPreferencesProxy implements SharedPreferences {
             editor.apply();
         }
     }
+
 }

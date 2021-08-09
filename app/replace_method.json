@@ -32,5 +32,19 @@
     "src_method": "android.content.SharedPreferences getPreferences(int)",
     "dest_class": "com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences",
     "dest_method": "android.content.SharedPreferences getPreferences(android.app.Activity, int)"
+  },
+  {
+    "src_class": "android.content.pm.PackageManager",
+    "dest_class": "com.coofee.rewrite.hook.pm.ShadowPackageManager",
+    "methods": [
+      {
+        "src_method": "java.util.List getInstalledApplications(int)",
+        "dest_method": "java.util.List getInstalledApplications(android.content.pm.PackageManager, int)"
+      },
+      {
+        "src_method": "java.util.List getInstalledPackages(int)",
+        "dest_method": "java.util.List getInstalledPackages(android.content.pm.PackageManager, int)"
+      }
+    ]
   }
 ]

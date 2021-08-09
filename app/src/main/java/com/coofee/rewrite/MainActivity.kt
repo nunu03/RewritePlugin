@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences
 import com.coofee.rewrite.hook.sharedpreferences.SharedPreferencesProxy
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         test_PreferenceManager_getSharedPreferences_string()
 
         SharedPreferencesProxy.print()
+
+        testPackageManager()
     }
 
     private fun test_Context_getSharedPreferences_string() {
@@ -52,5 +55,27 @@ class MainActivity : AppCompatActivity() {
             .edit()
             .putBoolean("test_shadow_preferences", true)
             .commit()
+    }
+
+    private fun testPackageManager() {
+        val installedApplications = packageManager.getInstalledApplications(0)
+        Log.e("rewrite", "testPackageManager; installedApplications.size=${installedApplications.size}")
+        if (installedApplications.size > 0) {
+            val applicationInfo = installedApplications[0]
+            Log.e(
+                "rewrite",
+                "testPackageManager; name=${applicationInfo.name}, packageName=${applicationInfo.packageName}"
+            )
+        }
+
+        val installedPackages = packageManager.getInstalledPackages(0)
+        Log.e("rewrite", "testPackageManager; installedPackages.size=${installedPackages.size}")
+        if (installedApplications.size > 0) {
+            val packageInfo = installedPackages[0]
+            Log.e(
+                "rewrite",
+                "testPackageManager; packageName=${packageInfo.packageName}, versionName=${packageInfo.versionName}"
+            )
+        }
     }
 }
