@@ -83,7 +83,7 @@ uploadArchives {
 
         pom.groupId = 'com.coofee.rewrite'
         pom.artifactId = 'rewrite'
-        pom.version = '0.0.5'
+        pom.version = '0.0.6'
         pom.packaging = "aar"
     }
 }

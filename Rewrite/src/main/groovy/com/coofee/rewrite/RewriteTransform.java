@@ -22,16 +22,13 @@ import org.objectweb.asm.tree.ClassNode;
 import java.io.File;
 import java.io.IOException;
 import java.net.URLClassLoader;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 class RewriteTransform extends Transform {
 
     private final AppExtension appExtension;
     private final Project project;
-    private final Set<Rewriter> rewriterSet = new HashSet<>();
+    private final List<Rewriter> rewriterList = new ArrayList<>();
     //    private RewriteCache rewriteCache;
     private URLClassLoader classLoader;
 
@@ -82,30 +79,30 @@ class RewriteTransform extends Transform {
 
         System.out.println("[RewritePlugin] enableSelfContainedModuleCollector=" + rewriteExtension.enableSelfContainedModuleCollector);
         if (rewriteExtension.enableSelfContainedModuleCollector) {
-            rewriterSet.add(new SelfContainedModuleCollector(folderUtils.getRootFolder()));
+            rewriterList.add(new SelfContainedModuleCollector(folderUtils.getRootFolder()));
         }
 
         NineOldAndroidsExtension nineOldAndroids = rewriteExtension.nineOldAndroids;
         System.out.println("[RewritePlugin] nineOldAndroids=" + nineOldAndroids);
         if (nineOldAndroids != null && nineOldAndroids.enable) {
-            rewriterSet.add(new NineOldAndroidsRewriter(nineOldAndroids));
+            rewriterList.add(new NineOldAndroidsRewriter(nineOldAndroids));
         }
 
         ReflectExtension reflect = rewriteExtension.reflect;
         System.out.println("[RewritePlugin] reflect=" + reflect);
         if (reflect != null && reflect.enable) {
-            rewriterSet.add(new ReflectRewriter(folderUtils.getRootFolder(), reflect));
+            rewriterList.add(new ReflectRewriter(folderUtils.getRootFolder(), reflect));
         }
 
         AnnotationExtension annotation = rewriteExtension.annotation;
         System.out.println("[RewritePlugin] annotation=" + annotation);
         if (annotation != null && annotation.enable) {
-            rewriterSet.add(new AnnotationRewriter(annotation));
+            rewriterList.add(new AnnotationRewriter(annotation));
         }
 
         ReplaceMethodExtension replaceMethod = rewriteExtension.replaceMethod;
         if (replaceMethod != null && replaceMethod.enable) {
-            rewriterSet.add(new ReplaceMethodWriter(replaceMethod, this.classLoader));
+            rewriterList.add(new ReplaceMethodWriter(replaceMethod, this.classLoader));
         }
 
 //        final File cacheFile = new File(folderUtils.getRootFolder(), RewriteCache.CACHE_FILE_NAME);
@@ -113,7 +110,7 @@ class RewriteTransform extends Transform {
 //        boolean valid = rewriteCache.isValid();
 //        System.out.println("[RewritePlugin] load cache success, cache is valid? " + valid);
 
-        for (Rewriter rewriter : rewriterSet) {
+        for (Rewriter rewriter : rewriterList) {
             rewriter.preTransform(transformInvocation);
         }
 
@@ -128,7 +125,7 @@ class RewriteTransform extends Transform {
             fullTransform(transformInvocation, outputProvider);
         }
 
-        for (Rewriter rewriter : rewriterSet) {
+        for (Rewriter rewriter : rewriterList) {
             rewriter.postTransform(transformInvocation);
         }
 
@@ -157,7 +154,7 @@ class RewriteTransform extends Transform {
                 File inputDir = directoryInput.getFile();
                 File outputDir = outputProvider.getContentLocation(directoryInput.getName(), directoryInput.getContentTypes(), directoryInput.getScopes(), Format.DIRECTORY);
 
-                for (Rewriter rewriter : rewriterSet) {
+                for (Rewriter rewriter : rewriterList) {
                     if (rewriter.needRemoveDependency(null, directoryInput)) {
                         System.out.println("[RewritePlugin] remove jar: " + directoryInput.getName() + ", file=" + directoryInput.getName());
                         FileUtils.deleteQuietly(outputDir);
@@ -246,7 +243,7 @@ class RewriteTransform extends Transform {
             byte[] bytecode = FileUtils.readFileToByteArray(inputFile);
             if (ClassUtil.isValidClassBytes(bytecode)) {
                 ClassNode classNode = AsmUtil.convert(bytecode);
-                for (Rewriter rewriter : rewriterSet) {
+                for (Rewriter rewriter : rewriterList) {
                     classNode = rewriter.transform(directoryInput, classNode);
                 }
                 bytecode = AsmUtil.convert(classNode);
@@ -262,7 +259,7 @@ class RewriteTransform extends Transform {
     private void processJar(TransformOutputProvider outputProvider, JarInput jarInput) {
         File outputJar = outputProvider.getContentLocation(jarInput.getName(), jarInput.getContentTypes(), jarInput.getScopes(), Format.JAR);
 
-        for (Rewriter rewriter : rewriterSet) {
+        for (Rewriter rewriter : rewriterList) {
             if (rewriter.needRemoveDependency(jarInput, null)) {
                 System.out.println("[RewritePlugin] remove jar: " + jarInput.getName() + ", file=" + outputJar.getName());
                 FileUtils.deleteQuietly(outputJar);
@@ -274,7 +271,7 @@ class RewriteTransform extends Transform {
         try {
             FileUtil.traverseJarClass(jarInput.getFile(), outputJar, (name, bytecode) -> {
                 ClassNode classNode = AsmUtil.convert(bytecode);
-                for (Rewriter rewriter : rewriterSet) {
+                for (Rewriter rewriter : rewriterList) {
                     classNode = rewriter.transform(jarInput, classNode);
                 }
                 return AsmUtil.convert(classNode);
