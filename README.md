@@ -14,6 +14,8 @@ buildscript {
 }
 ```
 
+最新版本：[![](https://jitpack.io/v/coofee/RewritePlugin.svg)](https://jitpack.io/#coofee/RewritePlugin)
+
 ## 2. 在`Application`项目中添加如下配置
 
 
