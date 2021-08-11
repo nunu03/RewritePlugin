@@ -35,12 +35,31 @@ rewrite {
         ]
 
         classAndMethods = [
-                // collect reflect info.
-                "java/lang/Class"      : ["forName"] as Set,
-                "java/lang/ClassLoader": ["loadClass"] as Set,
+            /*************************************************** 应用列表 (START) ***************************************************/
 
-                // collect so library.
-                "java/lang/System"     : ["load", "loadLibrary"] as Set,
+            "android/content/pm/PackageManager" : ["getInstalledApplications", "getInstalledPackages"] as Set,
+
+            /*************************************************** 应用列表 (END) ***************************************************/
+
+            /*************************************************** 定位权限 (START) ***************************************************/
+            // 系统定位
+            "android/location/LocationManager"         : ["requestLocationUpdates", "requestSingleUpdate"] as Set,
+
+            // IMEI & IMSI 定位：getCellLocation; getDeviceId/getSubscriberId/：READ_PHONE_STATE
+            "android/telephony/TelephonyManager"       : ["getCellLocation", "getAllCellInfo", "requestCellInfoUpdate", "requestNetworkScan", "getDeviceId", "getSubscriberId", "getImei"] as Set,
+
+            // 高德地图
+            "com/amap/api/location/AMapLocationClient" : ["startLocation", "startAssistantLocation"] as Set,
+            // 百度地图
+            "com/baidu/location/LocationClient"        : ["start"] as Set,
+            /*************************************************** 定位权限 (END) ***************************************************/
+
+            /*************************************************** MacAddress (START) ***************************************************/
+
+            "android/net/wifi/WifiInfo"                : ["getMacAddress"] as Set,
+            "java/net/NetworkInterface"                : ["getHardwareAddress"] as Set,
+
+            /*************************************************** MacAddress (END) ***************************************************/
         ]
     }
 
