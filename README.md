@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.coofee.rewrite:rewrite:<latest version>'
+        classpath 'com.github.coofee:RewritePlugin:<latest version>'
     }
 }
 ```
