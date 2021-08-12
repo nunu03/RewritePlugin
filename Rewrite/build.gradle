@@ -78,14 +78,14 @@ afterEvaluate {
     }
 }
 
-uploadArchives {
-    repositories.mavenDeployer {
-        repository(url: uri("${MAVEN_URL}")) {
-            authentication(userName: MAVEN_USERNAME, password: MAVEN_PASSWORD)
-        }
-
-        pom.groupId = project.group
-        pom.artifactId = project.name.toLowerCase()
-        pom.version = project.version
-    }
-}
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        repository(url: uri("${MAVEN_URL}")) {
+//            authentication(userName: MAVEN_USERNAME, password: MAVEN_PASSWORD)
+//        }
+//
+//        pom.groupId = project.group
+//        pom.artifactId = project.name.toLowerCase()
+//        pom.version = project.version
+//    }
+//}
