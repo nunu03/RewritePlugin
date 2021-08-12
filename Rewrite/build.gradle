@@ -65,7 +65,14 @@ afterEvaluate {
                 groupId = project.group
                 artifactId = project.name.toLowerCase()
                 version = project.version
+
                 from components.java
+            }
+
+            pluginMaven(MavenPublication) {
+                groupId = project.group
+                artifactId = project.name.toLowerCase()
+                version = project.version
             }
         }
     }
