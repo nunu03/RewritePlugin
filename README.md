@@ -1,5 +1,8 @@
 # 1. 配置插件
 
+支持扫描隐私权限方法，替换隐私权限方法等功能。
+
+
 ## 1. 在跟项目的`build.gradle`文件中添加插件
 
 ```groovy
@@ -16,7 +19,7 @@ buildscript {
 
 最新版本：[![](https://jitpack.io/v/coofee/RewritePlugin.svg)](https://jitpack.io/#coofee/RewritePlugin)
 
-## 2. 在`Application`项目中添加如下配置
+## 2. 在`Application`项目中添加配置
 
 
 ```groovy
@@ -24,32 +27,12 @@ apply plugin: 'com.coofee.rewrite'
 
 rewrite {
 
-    reflect {
-        // 启用后，编译应用时会扫描`classAndMethods`中配置的方法，生成的文件结果保存在：/build/intermediates/transforms/rewrite/debug/reflect.json中。
-        // 注意：正常编译运行应用时，需要把这个选项关闭掉，否则应用启动会直接崩溃。
-        enable = true
-
-        // 类名：方法名列表
-        classAndMethods = [
-             "android/content/pm/PackageManager" : ["getInstalledApplications", "getInstalledPackages"] as Set
-        ]
-
-        myAppPackages = [
-                "com/coofee/rewrite/",
-        ]
+    scanPermissionMethodCaller {
+       // ...
     }
 
     replaceMethod {
-        // 启用后编译应用时会替换除`excludes`包之外的其他类的方法，可以根据`[RewritePlugin] replace`关键字过滤输出日志获取结果。
-        enable = true
-
-        // 不替换该包下的方法
-        excludes = [
-                'com/coofee/rewrite/hook/'
-        ]
-
-        // 配置要替换的方法
-        configFile = file("replace_method.json")
+        // ...
     }
 }
 ```
@@ -64,55 +47,129 @@ $ ./gradlew :app:assembleDebug
 
 # 2. 例子
 
-## 1. reflect（扫描隐私API方法调用）
+## 1. 获取android framework方法权限集
 
-目前扫描了定位、IMEI、IMSI、MAC地址等，如果需要扫描其他方法，直接在`classAndMethods`中配置即可。
+首先需要保证已通过`sdk manager`安装对应`compileSdkVersion`版本的android源代码**，如下图所示：
+![](doc/install_android_source_code.png)
 
-> 注意：正常开发时，需要将`reflect`关闭掉，开启它之后可能会导致应用运行时崩溃。
+然后通过执行`collectAndroidPermissionMethod`任务获取android framework中需要权限的方法集：
 
-```groovy
-reflect {
-    enable = true
+```
+$ ./gradlew :app:collectAndroidPermissionMethod
+[RewritePlugin] success write to file=app/android_framework_class_method_permission.json
+```
 
-    classAndMethods = [
-            /*************************************************** 应用列表 (START) ***************************************************/
+查看`android_framework_class_method_permission.json`文件的内容格式大致如下：
 
-            "android/content/pm/PackageManager" : ["getInstalledApplications", "getInstalledPackages"] as Set,
-
-            /*************************************************** 应用列表 (END) ***************************************************/
-
-            /*************************************************** 定位权限 (START) ***************************************************/
-            // 系统定位
-            "android/location/LocationManager"         : ["requestLocationUpdates", "requestSingleUpdate"] as Set,
-
-            // IMEI & IMSI 定位：getCellLocation; getDeviceId/getSubscriberId/：READ_PHONE_STATE
-            "android/telephony/TelephonyManager"       : ["getCellLocation", "getAllCellInfo", "requestCellInfoUpdate", "requestNetworkScan", "getDeviceId", "getSubscriberId", "getImei"] as Set,
-
-            // 高德地图
-            "com/amap/api/location/AMapLocationClient" : ["startLocation", "startAssistantLocation"] as Set,
-            // 百度地图
-            "com/baidu/location/LocationClient"        : ["start"] as Set,
-            /*************************************************** 定位权限 (END) ***************************************************/
-
-            /*************************************************** MacAddress (START) ***************************************************/
-
-            "android/net/wifi/WifiInfo"                : ["getMacAddress"] as Set,
-            "java/net/NetworkInterface"                : ["getHardwareAddress"] as Set,
-
-            /*************************************************** MacAddress (END) ***************************************************/
-    ]
-
-    myAppPackages = [
-            "com/coofee/rewrite/",
-    ]
-
+```json
+{
+  "android.telephony.TelephonyManager#getDeviceId": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getImei": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getMeid": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ]
 }
 ```
 
-* 扫描结果
+## 2. scanPermissionMethodCaller（扫描隐私API方法调用）
 
-[reflect结果.json](./Rewrite插件数据/reflect.json)
+配置`scanPermissionMethodCaller`如下所示:
 
+> 注意：对于使用`ContentResolver`的获取`联系人/短信`等需要权限的行为，暂时不支持通过`scanPermissionMethodCaller`统计。
+> 可以参考[ShadowContentResolver.java](app/src/main/java/com/coofee/rewrite/hook/content/ShadowContentResolver.java)和[replace_method](app/replace_method.json)的配置，
+> 使用`replaceMethod`进行运行时拦截，统计权限获取情况。
+
+```groovy
+ scanPermissionMethodCaller {
+    // 会在 replaceMethod 之后执行，所以在 replaceMethod 中配置的方法不会被统计到。
+    enable = true
+
+    // 配置未添加权限的方法，比如隐私方法等。
+    configPermissionMethods = [
+            "android.content.pm.PackageManager#getInstalledPackages"         : [
+                    "获取应用列表"
+            ] as Set,
+            "android.content.pm.PackageManager#getInstalledApplications"     : [
+                    "获取应用列表"
+            ] as Set,
+
+            // 高德地图
+            "com.amap.api.location.AMapLocationClient#startLocation"         : [
+                    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+            ] as Set,
+            "com.amap.api.location.AMapLocationClient#startAssistantLocation": [
+                    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+            ] as Set,
+
+            // 百度地图
+            "com.baidu.location.LocationClient#start"                        : [
+                    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+            ] as Set,
+
+            "android.net.wifi.WifiInfo#getMacAddress"                        : [
+                    "Mac地址"
+            ] as Set,
+            "java.net.NetworkInterface#getHardwareAddress"                   : [
+                    "Mac地址"
+            ] as Set,
+    ]
+
+    // 当执行 `collectAndroidPermissionMethod` 任务成功后，
+    // 会生成 android_framework_class_method_permission.json 到当前project目录中.
+    configFile = file("android_framework_class_method_permission.json")
+
+    // 输出扫描结果
+    outputFile = file("scan_permission_method_caller.json")
+
+    // 忽略android系统库
+    excludes = [
+            "android/", "java/", "javax/", 'com/coofee/rewrite/hook/'
+    ]
+}
+```
+
+然后通过如下命令编译应用：
+
+```shell
+$ ./gradlew :app:assembleDebug
+[RewritePlugin] scan permission method caller result success write to file app/scan_permission_method_caller.json
+```
+
+查看`scan_permission_method_caller.json`扫描结果文件（按照权限分组）格式如下：
+
+```json
+{
+  "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE": [
+    {
+      "moduleName": "8f0a287af65fe4840370804c25783e3d59e2e135",
+      "className": "com.coofee.rewrite.MainActivity",
+      "methodName": "testGetDeviceId",
+      "lineNo": 113,
+      "permissionMethod": "android.telephony.TelephonyManager#getDeviceId"
+    }
+  ],
+  "Mac地址": [
+    {
+      "moduleName": "8f0a287af65fe4840370804c25783e3d59e2e135",
+      "className": "com.coofee.rewrite.MainActivity",
+      "methodName": "testGetMacAddress",
+      "lineNo": 122,
+      "permissionMethod": "android.net.wifi.WifiInfo#getMacAddress"
+    },
+    {
+      "moduleName": "8f0a287af65fe4840370804c25783e3d59e2e135",
+      "className": "com.coofee.rewrite.MainActivity",
+      "methodName": "testGetMacAddress",
+      "lineNo": 126,
+      "permissionMethod": "java.net.NetworkInterface#getHardwareAddress"
+    }
+  ]
+}
+```
 
 ## 2. replaceMethod（替换方法）
 
