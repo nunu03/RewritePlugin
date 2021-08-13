@@ -13,6 +13,8 @@ import com.coofee.rewrite.reflect.ReflectExtension;
 import com.coofee.rewrite.reflect.ReflectRewriter;
 import com.coofee.rewrite.replace.ReplaceMethodExtension;
 import com.coofee.rewrite.replace.ReplaceMethodWriter;
+import com.coofee.rewrite.scan.ScanPermissionMethodCallerExtension;
+import com.coofee.rewrite.scan.ScanPermissionMethodCallerRewriter;
 import com.coofee.rewrite.util.*;
 
 import org.apache.commons.io.FileUtils;
@@ -88,10 +90,9 @@ class RewriteTransform extends Transform {
             rewriterList.add(new NineOldAndroidsRewriter(nineOldAndroids));
         }
 
-        ReflectExtension reflect = rewriteExtension.reflect;
-        System.out.println("[RewritePlugin] reflect=" + reflect);
-        if (reflect != null && reflect.enable) {
-            rewriterList.add(new ReflectRewriter(folderUtils.getRootFolder(), reflect));
+        ReplaceMethodExtension replaceMethod = rewriteExtension.replaceMethod;
+        if (replaceMethod != null && replaceMethod.enable) {
+            rewriterList.add(new ReplaceMethodWriter(replaceMethod, this.classLoader));
         }
 
         AnnotationExtension annotation = rewriteExtension.annotation;
@@ -100,9 +101,16 @@ class RewriteTransform extends Transform {
             rewriterList.add(new AnnotationRewriter(annotation));
         }
 
-        ReplaceMethodExtension replaceMethod = rewriteExtension.replaceMethod;
-        if (replaceMethod != null && replaceMethod.enable) {
-            rewriterList.add(new ReplaceMethodWriter(replaceMethod, this.classLoader));
+        ReflectExtension reflect = rewriteExtension.reflect;
+        System.out.println("[RewritePlugin] reflect=" + reflect);
+        if (reflect != null && reflect.enable) {
+            rewriterList.add(new ReflectRewriter(folderUtils.getRootFolder(), reflect));
+        }
+
+        ScanPermissionMethodCallerExtension scanPermissionMethodCaller = rewriteExtension.scanPermissionMethodCaller;
+        System.out.println("[RewritePlugin] scanPermissionMethodCaller=" + scanPermissionMethodCaller);
+        if (scanPermissionMethodCaller != null && scanPermissionMethodCaller.enable) {
+            rewriterList.add(new ScanPermissionMethodCallerRewriter(folderUtils.getRootFolder(), scanPermissionMethodCaller));
         }
 
 //        final File cacheFile = new File(folderUtils.getRootFolder(), RewriteCache.CACHE_FILE_NAME);

@@ -1,0 +1,3064 @@
+{
+  "android.app.backup.BackupManager#beginRestoreSession": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#setBackupEnabled": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#isBackupEnabled": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#isBackupServiceActive": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#setAutoRestore": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getCurrentTransport": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getCurrentTransportComponent": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#listAllTransports": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#updateTransportAttributes": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#selectBackupTransport": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#backupNow": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getAvailableRestoreToken": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#isAppEligibleForBackup": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#requestBackup": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#cancelBackups": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#setAncestralSerialNumber": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getConfigurationIntent": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getDestinationString": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getDataManagementIntent": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getDataManagementLabel": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.app.backup.BackupManager#getDataManagementIntentLabel": [
+    "android.Manifest.permission.BACKUP"
+  ],
+  "android.print.PrintManager#addPrintServicesChangeListener": [
+    "android.Manifest.permission.READ_PRINT_SERVICES"
+  ],
+  "android.print.PrintManager#removePrintServicesChangeListener": [
+    "android.Manifest.permission.READ_PRINT_SERVICES"
+  ],
+  "android.print.PrintManager#getPrintServices": [
+    "android.Manifest.permission.READ_PRINT_SERVICES"
+  ],
+  "android.print.PrintManager#addPrintServiceRecommendationsChangeListener": [
+    "android.Manifest.permission.READ_PRINT_SERVICE_RECOMMENDATIONS"
+  ],
+  "android.print.PrintManager#removePrintServiceRecommendationsChangeListener": [
+    "android.Manifest.permission.READ_PRINT_SERVICE_RECOMMENDATIONS"
+  ],
+  "android.print.PrintManager#getPrintServiceRecommendations": [
+    "android.Manifest.permission.READ_PRINT_SERVICE_RECOMMENDATIONS"
+  ],
+  "android.permission.PermissionManager#getRuntimePermissionsVersion": [
+    "android.Manifest.permission.ADJUST_RUNTIME_PERMISSIONS_POLICY"
+  ],
+  "android.permission.PermissionManager#setRuntimePermissionsVersion": [
+    "android.Manifest.permission.ADJUST_RUNTIME_PERMISSIONS_POLICY"
+  ],
+  "android.telephony.SmsManager#sendTextMessageWithoutPersisting": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE",
+    "android.Manifest.permission.SEND_SMS"
+  ],
+  "android.telephony.SmsManager#sendMultipartTextMessageWithoutPersisting": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SmsManager#getSmsMessagesForFinancialApp": [
+    "android.Manifest.permission.SMS_FINANCIAL_TRANSACTIONS"
+  ],
+  "android.telephony.SmsManager#checkSmsShortCodeDestination": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.app.WallpaperManager#getFastDrawable": [
+    "android.Manifest.permission.READ_EXTERNAL_STORAGE"
+  ],
+  "android.app.WallpaperManager#peekFastDrawable": [
+    "android.Manifest.permission.READ_EXTERNAL_STORAGE"
+  ],
+  "android.app.WallpaperManager#getWallpaperFile": [
+    "android.Manifest.permission.READ_EXTERNAL_STORAGE"
+  ],
+  "android.app.WallpaperManager#setResource": [
+    "android.Manifest.permission.SET_WALLPAPER"
+  ],
+  "android.app.WallpaperManager#setBitmap": [
+    "android.Manifest.permission.SET_WALLPAPER"
+  ],
+  "android.app.WallpaperManager#setStream": [
+    "android.Manifest.permission.SET_WALLPAPER"
+  ],
+  "android.app.WallpaperManager#setDisplayPadding": [
+    "android.Manifest.permission.SET_WALLPAPER_HINTS"
+  ],
+  "android.app.WallpaperManager#clearWallpaper": [
+    "android.Manifest.permission.SET_WALLPAPER",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.app.WallpaperManager#setWallpaperComponent": [
+    "android.Manifest.permission.SET_WALLPAPER_COMPONENT"
+  ],
+  "android.app.WallpaperManager#clear": [
+    "android.Manifest.permission.SET_WALLPAPER"
+  ],
+  "android.nfc.cardemulation.CardEmulation#unsetOffHostForService": [
+    "android.Manifest.permission.NFC"
+  ],
+  "android.nfc.cardemulation.CardEmulation#setOffHostForService": [
+    "android.Manifest.permission.NFC"
+  ],
+  "android.provider.MediaStore#getContributedMediaSize": [
+    "android.Manifest.permission.CLEAR_APP_USER_DATA"
+  ],
+  "android.provider.MediaStore#deleteContributedMedia": [
+    "android.Manifest.permission.CLEAR_APP_USER_DATA"
+  ],
+  "android.telephony.PhoneStateListener#onPreciseCallStateChanged": [
+    "android.Manifest.permission.READ_PRECISE_PHONE_STATE)"
+  ],
+  "android.telephony.PhoneStateListener#onCallDisconnectCauseChanged": [
+    "android.Manifest.permission.READ_PRECISE_PHONE_STATE)"
+  ],
+  "android.telephony.PhoneStateListener#onImsCallDisconnectCauseChanged": [
+    "android.Manifest.permission.READ_PRECISE_PHONE_STATE)"
+  ],
+  "android.telephony.PhoneStateListener#onPreciseDataConnectionStateChanged": [
+    "android.Manifest.permission.READ_PRECISE_PHONE_STATE)"
+  ],
+  "android.view.Display#requestColorMode": [
+    "android.Manifest.permission.CONFIGURE_DISPLAY_COLOR_MODE"
+  ],
+  "android.bluetooth.BluetoothManager#getConnectionState": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothManager#getConnectedDevices": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothManager#getDevicesMatchingConnectionStates": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.media.tv.TvView#setMain": [
+    "android.Manifest.permission.CHANGE_HDMI_CEC_ACTIVE_SOURCE"
+  ],
+  "android.media.tv.TvView#unblockContent": [
+    "android.Manifest.permission.MODIFY_PARENTAL_CONTROLS"
+  ],
+  "android.net.ConnectivityManager#getNetworkPreference": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getActiveNetworkInfo": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getActiveNetwork": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getActiveNetworkForUid": [
+    "android.Manifest.permission.CONNECTIVITY_INTERNAL"
+  ],
+  "android.net.ConnectivityManager#setAlwaysOnVpnPackageForUser": [
+    "android.Manifest.permission.CONTROL_ALWAYS_ON_VPN"
+  ],
+  "android.net.ConnectivityManager#getAlwaysOnVpnPackageForUser": [
+    "android.Manifest.permission.CONTROL_ALWAYS_ON_VPN"
+  ],
+  "android.net.ConnectivityManager#isVpnLockdownEnabled": [
+    "android.Manifest.permission.CONTROL_ALWAYS_ON_VPN"
+  ],
+  "android.net.ConnectivityManager#getVpnLockdownWhitelist": [
+    "android.Manifest.permission.CONTROL_ALWAYS_ON_VPN"
+  ],
+  "android.net.ConnectivityManager#getActiveNetworkInfoForUid": [
+    "android.Manifest.permission.CONNECTIVITY_INTERNAL"
+  ],
+  "android.net.ConnectivityManager#getNetworkInfo": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getAllNetworkInfo": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getNetworkForType": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getAllNetworks": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getActiveLinkProperties": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getLinkProperties": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getNetworkCapabilities": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getCaptivePortalServerUrl": [
+    "android.Manifest.permission.LOCAL_MAC_ADDRESS"
+  ],
+  "android.net.ConnectivityManager#createNattKeepalive": [
+    "android.Manifest.permission.PACKET_KEEPALIVE_OFFLOAD"
+  ],
+  "android.net.ConnectivityManager#createSocketKeepalive": [
+    "android.Manifest.permission.PACKET_KEEPALIVE_OFFLOAD"
+  ],
+  "android.net.ConnectivityManager#getTetherableIfaces": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getTetheredIfaces": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getTetheringErroredIfaces": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#isTetheringSupported": [
+    "android.Manifest.permission.TETHER_PRIVILEGED",
+    "android.Manifest.permission.WRITE_SETTINGS"
+  ],
+  "android.net.ConnectivityManager#startTethering": [
+    "android.Manifest.permission.TETHER_PRIVILEGED"
+  ],
+  "android.net.ConnectivityManager#stopTethering": [
+    "android.Manifest.permission.TETHER_PRIVILEGED"
+  ],
+  "android.net.ConnectivityManager#registerTetheringEventCallback": [
+    "android.Manifest.permission.TETHER_PRIVILEGED"
+  ],
+  "android.net.ConnectivityManager#unregisterTetheringEventCallback": [
+    "android.Manifest.permission.TETHER_PRIVILEGED"
+  ],
+  "android.net.ConnectivityManager#getTetherableUsbRegexs": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getTetherableWifiRegexs": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getTetherableBluetoothRegexs": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getLastTetherError": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#getLatestTetheringEntitlementResult": [
+    "android.Manifest.permission.TETHER_PRIVILEGED"
+  ],
+  "android.net.ConnectivityManager#setGlobalProxy": [
+    "android.Manifest.permission.CONNECTIVITY_INTERNAL"
+  ],
+  "android.net.ConnectivityManager#isNetworkSupported": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#isActiveNetworkMetered": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#setAirplaneMode": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_STACK",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.ConnectivityManager#registerNetworkCallback": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#registerDefaultNetworkCallback": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.net.ConnectivityManager#setAcceptUnvalidated": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.ConnectivityManager#setAcceptPartialConnectivity": [
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.ConnectivityManager#setAvoidUnvalidated": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.ConnectivityManager#startCaptivePortalApp": [
+    "android.Manifest.permission.CONNECTIVITY_INTERNAL",
+    "android.Manifest.permission.PERMISSION_MAINLINE_NETWORK_STACK"
+  ],
+  "android.net.ConnectivityManager#shouldAvoidBadWifi": [
+    "android.Manifest.permission.PERMISSION_MAINLINE_NETWORK_STACK",
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.ConnectivityManager#getMultipathPreference": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.accounts.AccountManager#finishSessionAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.security.keystore.AttestationUtils#attestDeviceIds": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.os.DropBoxManager#getNextEntry": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.READ_LOGS"
+  ],
+  "android.location.LocationRequest#setLocationSettingsIgnored": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.net.NetworkScoreManager#getActiveScorerPackage": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES",
+    "android.Manifest.permission.SCORE_NETWORKS"
+  ],
+  "android.net.NetworkScoreManager#getActiveScorer": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES"
+  ],
+  "android.net.NetworkScoreManager#getAllValidScorers": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES"
+  ],
+  "android.net.NetworkScoreManager#updateScores": [
+    "android.Manifest.permission.SCORE_NETWORKS"
+  ],
+  "android.net.NetworkScoreManager#clearScores": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES",
+    "android.Manifest.permission.SCORE_NETWORKS"
+  ],
+  "android.net.NetworkScoreManager#setActiveScorer": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES",
+    "android.Manifest.permission.SCORE_NETWORKS"
+  ],
+  "android.net.NetworkScoreManager#disableScoring": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES",
+    "android.Manifest.permission.SCORE_NETWORKS"
+  ],
+  "android.net.NetworkScoreManager#requestScores": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES"
+  ],
+  "android.net.NetworkScoreManager#registerNetworkScoreCache": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES"
+  ],
+  "android.net.NetworkScoreManager#unregisterNetworkScoreCache": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES"
+  ],
+  "android.net.NetworkScoreManager#isCallerActiveScorer": [
+    "android.Manifest.permission.REQUEST_NETWORK_SCORES"
+  ],
+  "android.hardware.display.ColorDisplayManager#setNightDisplayActivated": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#setNightDisplayColorTemperature": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#getNightDisplayAutoMode": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#setNightDisplayAutoMode": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#setNightDisplayCustomStartTime": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#setNightDisplayCustomEndTime": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#isDeviceColorManaged": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#setSaturationLevel": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#isSaturationActivated": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#setAppSaturationLevel": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#setDisplayWhiteBalanceEnabled": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.display.ColorDisplayManager#getTransformCapabilities": [
+    "android.Manifest.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+  ],
+  "android.hardware.usb.UsbPort#getStatus": [
+    "android.Manifest.permission.MANAGE_USB"
+  ],
+  "android.hardware.usb.UsbPort#setRoles": [
+    "android.Manifest.permission.MANAGE_USB"
+  ],
+  "android.accessibilityservice.AccessibilityService#getFingerprintGestureController": [
+    "android.Manifest.permission.USE_FINGERPRINT"
+  ],
+  "android.telephony.ims.ImsMmTelManager#registerImsRegistrationCallback": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#unregisterImsRegistrationCallback": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#registerMmTelCapabilityCallback": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#unregisterMmTelCapabilityCallback": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#isAdvancedCallingSettingEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setAdvancedCallingSettingEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#isCapable": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#isAvailable": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#isVtSettingEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setVtSettingEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#isVoWiFiSettingEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setVoWiFiSettingEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#isVoWiFiRoamingSettingEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setVoWiFiRoamingSettingEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setVoWiFiNonPersistent": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#getVoWiFiModeSetting": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setVoWiFiModeSetting": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#getVoWiFiRoamingModeSetting": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setVoWiFiRoamingModeSetting": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#setRttCapabilitySetting": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ImsMmTelManager#isTtyOverVolteEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "com.android.server.os.BugreportManagerServiceImpl#setListener": [
+    "android.Manifest.permission.DUMP"
+  ],
+  "com.android.server.os.BugreportManagerServiceImpl#startBugreport": [
+    "android.Manifest.permission.DUMP"
+  ],
+  "com.android.server.os.BugreportManagerServiceImpl#cancelBugreport": [
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.content.pm.CrossProfileApps#startActivity": [
+    "android.Manifest.permission.INTERACT_ACROSS_PROFILES"
+  ],
+  "android.media.tv.TvInputManager#setParentalControlsEnabled": [
+    "android.Manifest.permission.MODIFY_PARENTAL_CONTROLS"
+  ],
+  "android.media.tv.TvInputManager#addBlockedRating": [
+    "android.Manifest.permission.MODIFY_PARENTAL_CONTROLS"
+  ],
+  "android.media.tv.TvInputManager#removeBlockedRating": [
+    "android.Manifest.permission.MODIFY_PARENTAL_CONTROLS"
+  ],
+  "android.media.tv.TvInputManager#getTvContentRatingSystemList": [
+    "android.Manifest.permission.READ_CONTENT_RATING_SYSTEMS"
+  ],
+  "android.media.tv.TvInputManager#notifyPreviewProgramBrowsableDisabled": [
+    "android.Manifest.permission.NOTIFY_TV_INPUTS"
+  ],
+  "android.media.tv.TvInputManager#notifyWatchNextProgramBrowsableDisabled": [
+    "android.Manifest.permission.NOTIFY_TV_INPUTS"
+  ],
+  "android.media.tv.TvInputManager#notifyPreviewProgramAddedToWatchNext": [
+    "android.Manifest.permission.NOTIFY_TV_INPUTS"
+  ],
+  "android.media.tv.TvInputManager#getAvailableTvStreamConfigList": [
+    "android.Manifest.permission.CAPTURE_TV_INPUT"
+  ],
+  "android.media.tv.TvInputManager#captureFrame": [
+    "android.Manifest.permission.CAPTURE_TV_INPUT"
+  ],
+  "android.media.tv.TvInputManager#isSingleSessionActive": [
+    "android.Manifest.permission.CAPTURE_TV_INPUT"
+  ],
+  "android.media.tv.TvInputManager#getHardwareList": [
+    "android.Manifest.permission.TV_INPUT_HARDWARE"
+  ],
+  "android.media.tv.TvInputManager#acquireTvInputHardware": [
+    "android.Manifest.permission.TV_INPUT_HARDWARE"
+  ],
+  "android.media.tv.TvInputManager#releaseTvInputHardware": [
+    "android.Manifest.permission.TV_INPUT_HARDWARE"
+  ],
+  "android.content.om.OverlayManager#setEnabledExclusiveInCategory": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.om.OverlayManager#setEnabled": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.om.OverlayManager#getOverlayInfosForTarget": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.media.session.MediaSessionManager#setOnVolumeKeyLongPressListener": [
+    "android.Manifest.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER"
+  ],
+  "android.media.session.MediaSessionManager#setOnMediaKeyListener": [
+    "android.Manifest.permission.SET_MEDIA_KEY_LISTENER"
+  ],
+  "android.hardware.hdmi.HdmiControlManager#setStandbyMode": [
+    "android.Manifest.permission.HDMI_CEC"
+  ],
+  "android.hardware.hdmi.HdmiControlManager#addHotplugEventListener": [
+    "android.Manifest.permission.HDMI_CEC"
+  ],
+  "android.hardware.hdmi.HdmiControlManager#removeHotplugEventListener": [
+    "android.Manifest.permission.HDMI_CEC"
+  ],
+  "com.android.settingslib.bluetooth.LocalBluetoothManager#create": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.telephony.euicc.EuiccManager#getOtaStatus": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#downloadSubscription": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#continueOperation": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#getDownloadableSubscriptionMetadata": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#getDefaultDownloadableSubscriptionList": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#deleteSubscription": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#switchToSubscription": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#updateSubscriptionNickname": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.euicc.EuiccManager#eraseSubscriptions": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.os.SystemUpdateManager#retrieveSystemUpdateInfo": [
+    "android.Manifest.permission.RECOVERY",
+    "android.Manifest.permission.READ_SYSTEM_UPDATE_INFO"
+  ],
+  "android.os.SystemUpdateManager#updateSystemUpdateInfo": [
+    "android.Manifest.permission.RECOVERY"
+  ],
+  "android.os.BatteryManager#setChargingStateUpdateDelayMillis": [
+    "android.Manifest.permission.POWER_SAVER"
+  ],
+  "android.media.soundtrigger.SoundTriggerDetector#startRecognition": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerDetector#stopRecognition": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "com.android.server.inputmethod.InputMethodManagerService.ShellCommandImpl#onCommand": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS",
+    "android.Manifest.permission.DUMP",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.net.wifi.rtt.WifiRttManager#startRanging": [
+    "android.Manifest.permission.CHANGE_WIFI_STATE",
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_WIFI_STATE",
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.rtt.WifiRttManager#cancelRanging": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.camera2.CameraManager#openCamera": [
+    "android.Manifest.permission.CAMERA"
+  ],
+  "android.hardware.biometrics.BiometricManager#canAuthenticate": [
+    "android.Manifest.permission.USE_BIOMETRIC"
+  ],
+  "android.hardware.biometrics.BiometricManager#registerEnabledOnKeyguardCallback": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.biometrics.BiometricManager#setActiveUser": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.biometrics.BiometricManager#resetLockout": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.biometrics.BiometricManager#onConfirmDeviceCredentialSuccess": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.biometrics.BiometricManager#onConfirmDeviceCredentialError": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.biometrics.BiometricManager#registerCancellationCallback": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.view.InputDevice#enable": [
+    "android.Manifest.permission.DISABLE_INPUT_DEVICE"
+  ],
+  "android.view.InputDevice#disable": [
+    "android.Manifest.permission.DISABLE_INPUT_DEVICE"
+  ],
+  "android.net.IpSecTransform.Builder#buildTunnelModeTransform": [
+    "android.Manifest.permission.MANAGE_IPSEC_TUNNELS"
+  ],
+  "android.os.image.DynamicSystemManager.Session#write": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager.Session#commit": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.net.wifi.RttManager#getRttCapabilities": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.RttManager#startRanging": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.RttManager#stopRanging": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.RttManager#enableResponder": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.RttManager#disableResponder": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "com.android.setupwizardlib.util.SystemBarHelper#setBackButtonVisible": [
+    "android.Manifest.permission.STATUS_BAR"
+  ],
+  "android.bluetooth.BluetoothProfile#getConnectedDevices": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothProfile#getDevicesMatchingConnectionStates": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothProfile#getConnectionState": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.net.NetworkRequest.Builder#setSignalStrength": [
+    "android.Manifest.permission.NETWORK_SIGNAL_STRENGTH_WAKEUP"
+  ],
+  "android.os.image.DynamicSystemManager#startInstallation": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager#getInstallationProgress": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager#abort": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager#isInUse": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager#isInstalled": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager#isEnabled": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager#remove": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemManager#setEnable": [
+    "android.Manifest.permission.MANAGE_DYNAMIC_SYSTEM"
+  ],
+  "android.os.UserManager#getUserSwitchability": [
+    "android.Manifest.permission.READ_PHONE_STATE",
+    "android.Manifest.permission.MANAGE_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.os.UserManager#isPrimaryUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#isAdminUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#isRestrictedProfile": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#isGuestUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#isManagedProfile": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#getUserRestrictionSource": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#getUserRestrictionSources": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#getSeedAccountName": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#getSeedAccountType": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#getSeedAccountOptions": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#clearSeedAccountData": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#setUserAdmin": [
+    "android.Manifest.permission.MANAGE_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.os.UserManager#getSerialNumbersOfUsers": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#getUserAccount": [
+    "android.Manifest.permission.MANAGE_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.os.UserManager#setUserAccount": [
+    "android.Manifest.permission.MANAGE_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.os.UserManager#getProfileIds": [
+    "android.Manifest.permission.MANAGE_USERS",
+    "android.Manifest.permission.CREATE_USERS"
+  ],
+  "android.os.UserManager#getProfileParent": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#removeUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#setUserName": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#setUserIcon": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.os.UserManager#getUserIcon": [
+    "android.Manifest.permission.MANAGE_USERS",
+    "android.Manifest.permission.GET_ACCOUNTS_PRIVILEGED"
+  ],
+  "android.hardware.location.ContextHubManager#getContextHubHandles": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#getContextHubInfo": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#loadNanoApp": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#unloadNanoApp": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#getNanoAppInstanceInfo": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#findNanoAppOnHub": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#sendMessage": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#getContextHubs": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#enableNanoApp": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#disableNanoApp": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#queryNanoApps": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.hardware.location.ContextHubManager#createClient": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.telephony.AnomalyReporter#initialize": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.app.role.RoleControllerManager#isApplicationQualifiedForRole": [
+    "android.Manifest.permission.MANAGE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleControllerManager#isRoleVisible": [
+    "android.Manifest.permission.MANAGE_ROLE_HOLDERS"
+  ],
+  "android.content.pm.ShortcutManager#getShareTargets": [
+    "android.Manifest.permission.MANAGE_APP_PREDICTIONS"
+  ],
+  "android.os.BugreportManager#startBugreport": [
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.os.BugreportManager#cancelBugreport": [
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.service.oemlock.OemLockManager#getLockName": [
+    "android.Manifest.permission.MANAGE_CARRIER_OEM_UNLOCK_STATE"
+  ],
+  "android.service.oemlock.OemLockManager#setOemUnlockAllowedByCarrier": [
+    "android.Manifest.permission.MANAGE_CARRIER_OEM_UNLOCK_STATE"
+  ],
+  "android.service.oemlock.OemLockManager#isOemUnlockAllowedByCarrier": [
+    "android.Manifest.permission.MANAGE_CARRIER_OEM_UNLOCK_STATE"
+  ],
+  "android.service.oemlock.OemLockManager#setOemUnlockAllowedByUser": [
+    "android.Manifest.permission.MANAGE_USER_OEM_UNLOCK_STATE"
+  ],
+  "android.service.oemlock.OemLockManager#isOemUnlockAllowedByUser": [
+    "android.Manifest.permission.MANAGE_USER_OEM_UNLOCK_STATE"
+  ],
+  "android.net.IpSecManager.IpSecTunnelInterface#addAddress": [
+    "android.Manifest.permission.MANAGE_IPSEC_TUNNELS"
+  ],
+  "android.net.IpSecManager.IpSecTunnelInterface#removeAddress": [
+    "android.Manifest.permission.MANAGE_IPSEC_TUNNELS"
+  ],
+  "android.hardware.biometrics.BiometricPrompt#authenticateUser": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.biometrics.BiometricPrompt#authenticate": [
+    "android.Manifest.permission.USE_BIOMETRIC"
+  ],
+  "android.net.wifi.WifiManager#getConfiguredNetworks": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_WIFI_STATE"
+  ],
+  "android.net.wifi.WifiManager#getPrivilegedConfiguredNetworks": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_WIFI_STATE",
+    "android.Manifest.permission.READ_WIFI_CREDENTIAL"
+  ],
+  "android.net.wifi.WifiManager#getAllMatchingWifiConfigs": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#getMatchingOsuProviders": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#getMatchingPasspointConfigsForOsuProviders": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#registerNetworkRequestMatchCallback": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#unregisterNetworkRequestMatchCallback": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#addNetworkSuggestions": [
+    "android.Manifest.permission.CHANGE_WIFI_STATE"
+  ],
+  "android.net.wifi.WifiManager#removeNetworkSuggestions": [
+    "android.Manifest.permission.CHANGE_WIFI_STATE"
+  ],
+  "android.net.wifi.WifiManager#removePasspointConfiguration": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#getPasspointConfigurations": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#startScan": [
+    "android.Manifest.permission.UPDATE_DEVICE_STATS"
+  ],
+  "android.net.wifi.WifiManager#getWifiApState": [
+    "android.Manifest.permission.ACCESS_WIFI_STATE"
+  ],
+  "android.net.wifi.WifiManager#isWifiApEnabled": [
+    "android.Manifest.permission.ACCESS_WIFI_STATE"
+  ],
+  "android.net.wifi.WifiManager#getWifiApConfiguration": [
+    "android.Manifest.permission.ACCESS_WIFI_STATE"
+  ],
+  "android.net.wifi.WifiManager#setWifiApConfiguration": [
+    "android.Manifest.permission.CHANGE_WIFI_STATE"
+  ],
+  "android.net.wifi.WifiManager#notifyUserOfApBandConversion": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#registerSoftApCallback": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#unregisterSoftApCallback": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#connect": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_STACK",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#save": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_STACK",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#forget": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_STACK",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#disable": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_STACK",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#disableEphemeralNetwork": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.wifi.WifiManager#enableVerboseLogging": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#startSubscriptionProvisioning": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#registerTrafficStateCallback": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#unregisterTrafficStateCallback": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#getFactoryMacAddresses": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.WifiManager#setDeviceMobilityState": [
+    "android.Manifest.permission.WIFI_SET_DEVICE_MOBILITY_STATE"
+  ],
+  "android.net.wifi.WifiManager#startEasyConnectAsConfiguratorInitiator": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#startEasyConnectAsEnrolleeInitiator": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#stopEasyConnectSession": [
+    "android.Manifest.permission.NETWORK_SETTINGS",
+    "android.Manifest.permission.NETWORK_SETUP_WIZARD"
+  ],
+  "android.net.wifi.WifiManager#addOnWifiUsabilityStatsListener": [
+    "android.Manifest.permission.WIFI_UPDATE_USABILITY_STATS_SCORE"
+  ],
+  "android.net.wifi.WifiManager#removeOnWifiUsabilityStatsListener": [
+    "android.Manifest.permission.WIFI_UPDATE_USABILITY_STATS_SCORE"
+  ],
+  "android.net.wifi.WifiManager#updateWifiUsabilityScore": [
+    "android.Manifest.permission.WIFI_UPDATE_USABILITY_STATS_SCORE"
+  ],
+  "android.app.role.RoleManager#getRoleHolders": [
+    "android.Manifest.permission.MANAGE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleManager#getRoleHoldersAsUser": [
+    "android.Manifest.permission.MANAGE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleManager#addRoleHolderAsUser": [
+    "android.Manifest.permission.MANAGE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleManager#removeRoleHolderAsUser": [
+    "android.Manifest.permission.MANAGE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleManager#clearRoleHoldersAsUser": [
+    "android.Manifest.permission.MANAGE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleManager#addOnRoleHoldersChangedListenerAsUser": [
+    "android.Manifest.permission.OBSERVE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleManager#removeOnRoleHoldersChangedListenerAsUser": [
+    "android.Manifest.permission.OBSERVE_ROLE_HOLDERS"
+  ],
+  "android.app.role.RoleManager#setRoleNamesFromController": [
+    "android.Manifest.permission.PERMISSION_MANAGE_ROLES_FROM_CONTROLLER"
+  ],
+  "android.app.role.RoleManager#addRoleHolderFromController": [
+    "android.Manifest.permission.PERMISSION_MANAGE_ROLES_FROM_CONTROLLER"
+  ],
+  "android.app.role.RoleManager#removeRoleHolderFromController": [
+    "android.Manifest.permission.PERMISSION_MANAGE_ROLES_FROM_CONTROLLER"
+  ],
+  "android.app.role.RoleManager#getHeldRolesFromController": [
+    "android.Manifest.permission.PERMISSION_MANAGE_ROLES_FROM_CONTROLLER"
+  ],
+  "android.content.pm.PackageInstaller.Session#commitTransferred": [
+    "android.Manifest.permission.INSTALL_PACKAGES"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#discoverPeers": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#connect": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#createGroup": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#listen": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#addLocalService": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#discoverServices": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#requestPeers": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#requestGroupInfo": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#factoryReset": [
+    "android.Manifest.permission.NETWORK_SETTINGS"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#requestOngoingPeerConfig": [
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#setOngoingPeerConfig": [
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.wifi.p2p.WifiP2pManager#requestDeviceInfo": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.os.IncidentManager#reportIncident": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.os.IncidentManager#requestAuthorization": [
+    "android.Manifest.permission.REQUEST_INCIDENT_REPORT_APPROVAL"
+  ],
+  "android.os.IncidentManager#cancelAuthorization": [
+    "android.Manifest.permission.REQUEST_INCIDENT_REPORT_APPROVAL"
+  ],
+  "android.os.IncidentManager#getPendingReports": [
+    "android.Manifest.permission.APPROVE_INCIDENT_REPORTS"
+  ],
+  "android.os.IncidentManager#approveReport": [
+    "android.Manifest.permission.APPROVE_INCIDENT_REPORTS"
+  ],
+  "android.os.IncidentManager#denyReport": [
+    "android.Manifest.permission.APPROVE_INCIDENT_REPORTS"
+  ],
+  "android.os.IncidentManager#getIncidentReportList": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.os.IncidentManager#getIncidentReport": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.os.IncidentManager#deleteIncidentReports": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.media.RingtoneManager#enableSyncFromParent": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.telecom.TelecomManager#getDefaultOutgoingPhoneAccount": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getUserSelectedOutgoingPhoneAccount": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#setUserSelectedOutgoingPhoneAccount": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getPhoneAccountsSupportingScheme": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getCallCapablePhoneAccounts": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getSelfManagedPhoneAccounts": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#setDefaultDialer": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS",
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#isVoiceMailNumber": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getVoiceMailNumber": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getLine1Number": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#isInCall": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#isInManagedCall": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#isRinging": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#endCall": [
+    "android.Manifest.permission.ANSWER_PHONE_CALLS"
+  ],
+  "android.telecom.TelecomManager#acceptRingingCall": [
+    "android.Manifest.permission.ANSWER_PHONE_CALLS",
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#silenceRinger": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#isTtySupported": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getCurrentTtyMode": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#handleMmi": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#getAdnUriForPhoneAccount": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#cancelMissedCallsNotification": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#showInCallScreen": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#placeCall": [
+    "android.Manifest.permission.CALL_PHONE",
+    "android.Manifest.permission.MANAGE_OWN_CALLS"
+  ],
+  "android.telecom.TelecomManager#enablePhoneAccount": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telecom.TelecomManager#dumpAnalytics": [
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.telecom.TelecomManager#isInEmergencyCall": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.hardware.face.FaceManager#authenticate": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.face.FaceManager#enroll": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#generateChallenge": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#revokeChallenge": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#setFeature": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#getFeature": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#userActivity": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#setActiveUser": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#remove": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#getEnrolledFaces": [
+    "android.Manifest.permission.MANAGE_BIOMETRIC"
+  ],
+  "android.hardware.face.FaceManager#hasEnrolledTemplates": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.hardware.face.FaceManager#isHardwareDetected": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.face.FaceManager#addLockoutResetCallback": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.app.KeyguardManager#setPrivateNotificationsAllowed": [
+    "android.Manifest.permission.CONTROL_KEYGUARD_SECURE_NOTIFICATIONS"
+  ],
+  "android.app.KeyguardManager#getPrivateNotificationsAllowed": [
+    "android.Manifest.permission.CONTROL_KEYGUARD_SECURE_NOTIFICATIONS"
+  ],
+  "android.app.KeyguardManager#requestDismissKeyguard": [
+    "android.Manifest.permission.SHOW_KEYGUARD_MESSAGE"
+  ],
+  "android.app.KeyguardManager#exitKeyguardSecurely": [
+    "android.Manifest.permission.DISABLE_KEYGUARD"
+  ],
+  "android.app.AppOpsManager#getPackagesForOps": [
+    "android.Manifest.permission.GET_APP_OPS_STATS"
+  ],
+  "android.app.AppOpsManager#getOpsForPackage": [
+    "android.Manifest.permission.GET_APP_OPS_STATS"
+  ],
+  "android.app.AppOpsManager#getHistoricalOps": [
+    "android.Manifest.permission.GET_APP_OPS_STATS"
+  ],
+  "android.app.AppOpsManager#getHistoricalOpsFromDiskRaw": [
+    "android.Manifest.permission.MANAGE_APPOPS"
+  ],
+  "android.app.AppOpsManager#reloadNonHistoricalState": [
+    "android.Manifest.permission.MANAGE_APPOPS"
+  ],
+  "android.app.AppOpsManager#setUidMode": [
+    "android.Manifest.permission.MANAGE_APP_OPS_MODES"
+  ],
+  "android.app.AppOpsManager#setMode": [
+    "android.Manifest.permission.MANAGE_APP_OPS_MODES"
+  ],
+  "android.app.AppOpsManager#setRestriction": [
+    "android.Manifest.permission.MANAGE_APP_OPS_MODES"
+  ],
+  "android.app.AppOpsManager#resetAllModes": [
+    "android.Manifest.permission.MANAGE_APP_OPS_MODES"
+  ],
+  "android.app.AppOpsManager#startWatchingMode": [
+    "android.Manifest.permission.WATCH_APPOPS"
+  ],
+  "android.app.AppOpsManager#startWatchingNoted": [
+    "android.Manifest.permission.WATCH_APPOPS"
+  ],
+  "android.app.AppOpsManager#setHistoryParameters": [
+    "android.Manifest.permission.MANAGE_APPOPS"
+  ],
+  "android.app.AppOpsManager#offsetHistory": [
+    "android.Manifest.permission.MANAGE_APPOPS"
+  ],
+  "android.app.AppOpsManager#addHistoricalOps": [
+    "android.Manifest.permission.MANAGE_APPOPS"
+  ],
+  "android.app.AppOpsManager#resetHistoryParameters": [
+    "android.Manifest.permission.MANAGE_APPOPS"
+  ],
+  "android.app.AppOpsManager#clearHistory": [
+    "android.Manifest.permission.MANAGE_APPOPS"
+  ],
+  "android.util.StatsLog#logBinaryPushStateChanged": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.util.StatsLog#logWatchdogRollbackOccurred": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.content.pm.PackageManager#getPackageInfoAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.pm.PackageManager#getApplicationInfoAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.pm.PackageManager#getInstalledPackagesAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.pm.PackageManager#grantRuntimePermission": [
+    "android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#revokeRuntimePermission": [
+    "android.Manifest.permission.REVOKE_RUNTIME_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#getPermissionFlags": [
+    "android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS",
+    "android.Manifest.permission.GET_RUNTIME_PERMISSIONS",
+    "android.Manifest.permission.REVOKE_RUNTIME_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#updatePermissionFlags": [
+    "android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS",
+    "android.Manifest.permission.REVOKE_RUNTIME_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#getWhitelistedRestrictedPermissions": [
+    "android.Manifest.permission.WHITELIST_RESTRICTED_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#addWhitelistedRestrictedPermission": [
+    "android.Manifest.permission.WHITELIST_RESTRICTED_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#removeWhitelistedRestrictedPermission": [
+    "android.Manifest.permission.WHITELIST_RESTRICTED_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#getInstantApps": [
+    "android.Manifest.permission.ACCESS_INSTANT_APPS"
+  ],
+  "android.content.pm.PackageManager#getInstantAppIcon": [
+    "android.Manifest.permission.ACCESS_INSTANT_APPS"
+  ],
+  "android.content.pm.PackageManager#getDeclaredSharedLibraries": [
+    "android.Manifest.permission.ACCESS_SHARED_LIBRARIES"
+  ],
+  "android.content.pm.PackageManager#queryIntentActivitiesAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.pm.PackageManager#queryBroadcastReceiversAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.pm.PackageManager#queryIntentServicesAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.pm.PackageManager#queryIntentContentProvidersAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.pm.PackageManager#installExistingPackageAsUser": [
+    "android.Manifest.permission.INSTALL_PACKAGES",
+    "android.Manifest.permission.INSTALL_EXISTING_PACKAGES",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.pm.PackageManager#verifyIntentFilter": [
+    "android.Manifest.permission.INTENT_FILTER_VERIFICATION_AGENT"
+  ],
+  "android.content.pm.PackageManager#getIntentVerificationStatusAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.pm.PackageManager#updateIntentVerificationStatusAsUser": [
+    "android.Manifest.permission.SET_PREFERRED_APPLICATIONS"
+  ],
+  "android.content.pm.PackageManager#getDefaultBrowserPackageNameAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.pm.PackageManager#setDefaultBrowserPackageNameAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL",
+    "android.Manifest.permission.SET_PREFERRED_APPLICATIONS"
+  ],
+  "android.content.pm.PackageManager#setUpdateAvailable": [
+    "android.Manifest.permission.INSTALL_PACKAGES"
+  ],
+  "android.content.pm.PackageManager#deletePackage": [
+    "android.Manifest.permission.DELETE_PACKAGES"
+  ],
+  "android.content.pm.PackageManager#deletePackageAsUser": [
+    "android.Manifest.permission.DELETE_PACKAGES",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.pm.PackageManager#setComponentEnabledSetting": [
+    "android.Manifest.permission.CHANGE_COMPONENT_ENABLED_STATE"
+  ],
+  "android.content.pm.PackageManager#setSyntheticAppDetailsActivityEnabled": [
+    "android.Manifest.permission.CHANGE_COMPONENT_ENABLED_STATE"
+  ],
+  "android.content.pm.PackageManager#setApplicationEnabledSetting": [
+    "android.Manifest.permission.CHANGE_COMPONENT_ENABLED_STATE"
+  ],
+  "android.content.pm.PackageManager#addOnPermissionsChangeListener": [
+    "android.Manifest.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#removeOnPermissionsChangeListener": [
+    "android.Manifest.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS"
+  ],
+  "android.content.pm.PackageManager#setDistractingPackageRestrictions": [
+    "android.Manifest.permission.SUSPEND_APPS"
+  ],
+  "android.content.pm.PackageManager#setPackagesSuspended": [
+    "android.Manifest.permission.SUSPEND_APPS"
+  ],
+  "android.content.pm.PackageManager#getUnsuspendablePackages": [
+    "android.Manifest.permission.SUSPEND_APPS"
+  ],
+  "android.content.pm.PackageManager#setHarmfulAppWarning": [
+    "android.Manifest.permission.SET_HARMFUL_APP_WARNINGS"
+  ],
+  "android.content.pm.PackageManager#getHarmfulAppWarning": [
+    "android.Manifest.permission.SET_HARMFUL_APP_WARNINGS"
+  ],
+  "android.view.WindowManager#getCurrentImeTouchRegion": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS"
+  ],
+  "android.service.persistentdata.PersistentDataBlockManager#getDataBlockSize": [
+    "android.Manifest.permission.ACCESS_PDB_STATE"
+  ],
+  "android.service.persistentdata.PersistentDataBlockManager#wipe": [
+    "android.Manifest.permission.OEM_UNLOCK_STATE"
+  ],
+  "android.service.persistentdata.PersistentDataBlockManager#setOemUnlockEnabled": [
+    "android.Manifest.permission.OEM_UNLOCK_STATE"
+  ],
+  "android.service.persistentdata.PersistentDataBlockManager#getOemUnlockEnabled": [
+    "android.Manifest.permission.OEM_UNLOCK_STATE",
+    "android.Manifest.permission.READ_OEM_UNLOCK_STATE"
+  ],
+  "android.service.persistentdata.PersistentDataBlockManager#getFlashLockState": [
+    "android.Manifest.permission.OEM_UNLOCK_STATE",
+    "android.Manifest.permission.READ_OEM_UNLOCK_STATE"
+  ],
+  "android.hardware.biometrics.BiometricPrompt.Builder#setUseDefaultTitle": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.hardware.biometrics.BiometricPrompt.Builder#setFromConfirmDeviceCredential": [
+    "android.Manifest.permission.USE_BIOMETRIC_INTERNAL"
+  ],
+  "android.app.StatusBarManager#setDisabledForSetup": [
+    "android.Manifest.permission.STATUS_BAR"
+  ],
+  "android.app.StatusBarManager#getDisableInfo": [
+    "android.Manifest.permission.STATUS_BAR"
+  ],
+  "android.content.pm.PackageInstaller.SessionParams#setGrantedRuntimePermissions": [
+    "android.Manifest.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS"
+  ],
+  "android.content.pm.PackageInstaller.SessionParams#setAllocateAggressive": [
+    "android.Manifest.permission.ALLOCATE_AGGRESSIVE"
+  ],
+  "android.content.pm.PackageInstaller.SessionParams#setStaged": [
+    "android.Manifest.permission.INSTALL_PACKAGES"
+  ],
+  "android.content.pm.PackageInstaller.SessionParams#setInstallAsApex": [
+    "android.Manifest.permission.INSTALL_PACKAGES"
+  ],
+  "android.hardware.location.ContextHubClient#sendMessageToNanoApp": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.app.ActivityOptions#makeRemoteAnimation": [
+    "android.Manifest.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS"
+  ],
+  "android.security.keystore.recovery.RecoveryController#getInstance": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#isRecoverableKeyStoreEnabled": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#initRecoveryService": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#getKeyChainSnapshot": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#setSnapshotCreatedPendingIntent": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#setServerParams": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#getAliases": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#setRecoveryStatus": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#getRecoveryStatus": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#setRecoverySecretTypes": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#getRecoverySecretTypes": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#generateKey": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#importKey": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#getKey": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#removeKey": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#createRecoverySession": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoveryController#getRootCertificates": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.os.PowerManager#userActivity": [
+    "android.Manifest.permission.DEVICE_POWER",
+    "android.Manifest.permission.USER_ACTIVITY"
+  ],
+  "android.os.PowerManager#dream": [
+    "android.Manifest.permission.READ_DREAM_STATE",
+    "android.Manifest.permission.WRITE_DREAM_STATE"
+  ],
+  "android.os.PowerManager#setPowerSaveModeEnabled": [
+    "android.Manifest.permission.DEVICE_POWER",
+    "android.Manifest.permission.POWER_SAVER"
+  ],
+  "android.os.PowerManager#setDynamicPowerSaveHint": [
+    "android.Manifest.permission.POWER_SAVER"
+  ],
+  "android.os.PowerManager#setAdaptivePowerSavePolicy": [
+    "android.Manifest.permission.DEVICE_POWER",
+    "android.Manifest.permission.POWER_SAVER"
+  ],
+  "android.os.PowerManager#setAdaptivePowerSaveEnabled": [
+    "android.Manifest.permission.DEVICE_POWER",
+    "android.Manifest.permission.POWER_SAVER"
+  ],
+  "android.os.PowerManager#getPowerSaveModeTrigger": [
+    "android.Manifest.permission.POWER_SAVER"
+  ],
+  "android.os.PowerManager#forceSuspend": [
+    "android.Manifest.permission.DEVICE_POWER"
+  ],
+  "android.hardware.radio.RadioManager#listModules": [
+    "android.Manifest.permission.ACCESS_BROADCAST_RADIO"
+  ],
+  "android.hardware.radio.RadioManager#openTuner": [
+    "android.Manifest.permission.ACCESS_BROADCAST_RADIO"
+  ],
+  "android.hardware.radio.RadioManager#addAnnouncementListener": [
+    "android.Manifest.permission.ACCESS_BROADCAST_RADIO"
+  ],
+  "android.hardware.radio.RadioManager#removeAnnouncementListener": [
+    "android.Manifest.permission.ACCESS_BROADCAST_RADIO"
+  ],
+  "android.content.ContentResolver#putCache": [
+    "android.Manifest.permission.CACHE_CONTENT"
+  ],
+  "android.content.ContentResolver#getCache": [
+    "android.Manifest.permission.CACHE_CONTENT"
+  ],
+  "android.app.VrManager#registerVrStateCallback": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS",
+    "android.Manifest.permission.ACCESS_VR_STATE"
+  ],
+  "android.app.VrManager#unregisterVrStateCallback": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS",
+    "android.Manifest.permission.ACCESS_VR_STATE"
+  ],
+  "android.app.VrManager#isVrModeEnabled": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS",
+    "android.Manifest.permission.ACCESS_VR_STATE"
+  ],
+  "android.app.VrManager#isPersistentVrModeEnabled": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS",
+    "android.Manifest.permission.ACCESS_VR_STATE"
+  ],
+  "android.app.VrManager#setPersistentVrModeEnabled": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS"
+  ],
+  "android.app.VrManager#setVr2dDisplayProperties": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS"
+  ],
+  "android.app.VrManager#setAndBindVrCompositor": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS"
+  ],
+  "android.app.VrManager#setStandbyEnabled": [
+    "android.Manifest.permission.ACCESS_VR_MANAGER"
+  ],
+  "android.app.VrManager#setVrInputMethod": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS"
+  ],
+  "android.app.VrManager#getVr2dDisplayId": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS"
+  ],
+  "android.content.pm.dex.ArtManager#snapshotRuntimeProfile": [
+    "android.Manifest.permission.READ_RUNTIME_PROFILES",
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.content.pm.dex.ArtManager#isRuntimeProfilingEnabled": [
+    "android.Manifest.permission.READ_RUNTIME_PROFILES",
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.app.StatsManager#addConfig": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#addConfiguration": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#removeConfig": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#removeConfiguration": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#setBroadcastSubscriber": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#setFetchReportsOperation": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#setActiveConfigsChangedOperation": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#setDataFetchOperation": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#getReports": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#getData": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#getStatsMetadata": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#getMetadata": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#getRegisteredExperimentIds": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.StatsManager#setPullerCallback": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS",
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.hardware.usb.UsbManager#grantPermission": [
+    "android.Manifest.permission.MANAGE_USB"
+  ],
+  "android.hardware.usb.UsbManager#getPorts": [
+    "android.Manifest.permission.MANAGE_USB"
+  ],
+  "android.hardware.usb.UsbManager#enableContaminantDetection": [
+    "android.Manifest.permission.MANAGE_USB"
+  ],
+  "android.telephony.CarrierConfigManager#overrideConfig": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.CarrierConfigManager#updateConfigForPhoneId": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.net.IpSecManager#createIpSecTunnelInterface": [
+    "android.Manifest.permission.MANAGE_IPSEC_TUNNELS"
+  ],
+  "android.net.IpSecManager#applyTunnelModeTransform": [
+    "android.Manifest.permission.MANAGE_IPSEC_TUNNELS"
+  ],
+  "android.app.job.JobScheduler#scheduleAsPackage": [
+    "android.Manifest.permission.UPDATE_DEVICE_STATS"
+  ],
+  "android.hardware.SensorPrivacyManager#setSensorPrivacy": [
+    "android.Manifest.permission.MANAGE_SENSOR_PRIVACY"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#authenticate": [
+    "android.Manifest.permission.USE_FINGERPRINT",
+    "android.Manifest.permission.USE_BIOMETRIC"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#enroll": [
+    "android.Manifest.permission.MANAGE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#preEnroll": [
+    "android.Manifest.permission.MANAGE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#postEnroll": [
+    "android.Manifest.permission.MANAGE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#setActiveUser": [
+    "android.Manifest.permission.MANAGE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#remove": [
+    "android.Manifest.permission.MANAGE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#enumerate": [
+    "android.Manifest.permission.MANAGE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#rename": [
+    "android.Manifest.permission.MANAGE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#getEnrolledFingerprints": [
+    "android.Manifest.permission.USE_FINGERPRINT"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#hasEnrolledFingerprints": [
+    "android.Manifest.permission.USE_FINGERPRINT",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.hardware.fingerprint.FingerprintManager#isHardwareDetected": [
+    "android.Manifest.permission.USE_FINGERPRINT"
+  ],
+  "android.content.pm.PackageInstaller#uninstall": [
+    "android.Manifest.permission.REQUEST_DELETE_PACKAGES",
+    "android.Manifest.permission.DELETE_PACKAGES"
+  ],
+  "android.content.pm.PackageInstaller#installExistingPackage": [
+    "android.Manifest.permission.INSTALL_PACKAGES",
+    "android.Manifest.permission.INSTALL_EXISTING_PACKAGES"
+  ],
+  "android.content.pm.PackageInstaller#setPermissionsResult": [
+    "android.Manifest.permission.INSTALL_PACKAGES"
+  ],
+  "android.widget.TextView#setTextOperationUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "com.android.server.content.ContentService#putCache": [
+    "android.Manifest.permission.CACHE_CONTENT"
+  ],
+  "com.android.server.content.ContentService#getCache": [
+    "android.Manifest.permission.CACHE_CONTENT"
+  ],
+  "android.hardware.display.DisplayManager#setSaturationLevel": [
+    "android.Manifest.permission.CONTROL_DISPLAY_SATURATION"
+  ],
+  "android.hardware.display.DisplayManager#getBrightnessEvents": [
+    "android.Manifest.permission.BRIGHTNESS_SLIDER_USAGE"
+  ],
+  "android.hardware.display.DisplayManager#getAmbientBrightnessStats": [
+    "android.Manifest.permission.ACCESS_AMBIENT_LIGHT_STATS"
+  ],
+  "android.hardware.display.DisplayManager#setBrightnessConfiguration": [
+    "android.Manifest.permission.CONFIGURE_DISPLAY_BRIGHTNESS"
+  ],
+  "android.hardware.display.DisplayManager#getBrightnessConfiguration": [
+    "android.Manifest.permission.CONFIGURE_DISPLAY_BRIGHTNESS"
+  ],
+  "android.hardware.display.DisplayManager#getDefaultBrightnessConfiguration": [
+    "android.Manifest.permission.CONFIGURE_DISPLAY_BRIGHTNESS"
+  ],
+  "android.content.ContentProviderClient#setDetectNotResponding": [
+    "android.Manifest.permission.REMOVE_TASKS"
+  ],
+  "android.app.BroadcastOptions#setTemporaryAppWhitelistDuration": [
+    "android.Manifest.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST"
+  ],
+  "android.app.BroadcastOptions#setBackgroundActivityStartsAllowed": [
+    "android.Manifest.permission.START_ACTIVITIES_FROM_BACKGROUND"
+  ],
+  "android.bluetooth.BluetoothHearingAid#getActiveDevices": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothHearingAid#getPriority": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothHearingAid#getVolume": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothHearingAid#adjustVolume": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothHearingAid#getHiSyncId": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothHearingAid#getDeviceSide": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothHearingAid#getDeviceMode": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.location.LocationManager#requestLocationUpdates": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+  ],
+  "android.location.LocationManager#requestSingleUpdate": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+  ],
+  "android.location.LocationManager#injectLocation": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#addProximityAlert": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+  ],
+  "android.location.LocationManager#addGeofence": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+  ],
+  "android.location.LocationManager#setLocationEnabledForUser": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.location.LocationManager#setProviderEnabledForUser": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.location.LocationManager#getLastKnownLocation": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+  ],
+  "android.location.LocationManager#addGpsStatusListener": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#registerGnssStatusCallback": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#addNmeaListener": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#registerGnssMeasurementsCallback": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#injectGnssMeasurementCorrections": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#getGnssCapabilities": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#registerGnssNavigationMessageCallback": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#getGpsStatus": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.location.LocationManager#getGnssBatchSize": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#registerGnssBatchedLocationCallback": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#flushGnssBatch": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#unregisterGnssBatchedLocationCallback": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#setExtraLocationControllerPackage": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#setLocationControllerExtraPackage": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#setLocationControllerExtraPackageEnabled": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.location.LocationManager#setExtraLocationControllerPackageEnabled": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.nfc.NfcAdapter#enable": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.nfc.NfcAdapter#disable": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.nfc.NfcAdapter#enableSecureNfc": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.nfc.NfcAdapter#enableNdefPush": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.nfc.NfcAdapter#disableNdefPush": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.nfc.NfcAdapter#addNfcUnlockHandler": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.nfc.NfcAdapter#removeNfcUnlockHandler": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.bluetooth.BluetoothDevice#getName": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#getType": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#getBatteryLevel": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#createBond": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothDevice#cancelBondProcess": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothDevice#removeBond": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothDevice#getBondState": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#isConnected": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#isEncrypted": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#getBluetoothClass": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#getUuids": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#fetchUuidsWithSdp": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#setPairingConfirmation": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothDevice#setSilenceMode": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothDevice#isInSilenceMode": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothDevice#setPhonebookAccessPermission": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothDevice#createRfcommSocketToServiceRecord": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#createInsecureRfcommSocketToServiceRecord": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#createL2capChannel": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#createL2capCocSocket": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#createInsecureL2capChannel": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#createInsecureL2capCocSocket": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothDevice#setMetadata": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothDevice#getMetadata": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.app.ActivityManager#moveTaskToFront": [
+    "android.Manifest.permission.REORDER_TASKS"
+  ],
+  "android.app.ActivityManager#clearApplicationUserData": [
+    "android.Manifest.permission.ACCESS_INSTANT_APPS",
+    "android.Manifest.permission.CLEAR_APP_USER_DATA"
+  ],
+  "android.app.ActivityManager#getPackageImportance": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.app.ActivityManager#getUidImportance": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.app.ActivityManager#addOnUidImportanceListener": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.app.ActivityManager#removeOnUidImportanceListener": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.app.ActivityManager#killBackgroundProcesses": [
+    "android.Manifest.permission.KILL_BACKGROUND_PROCESSES"
+  ],
+  "android.app.ActivityManager#killUid": [
+    "android.Manifest.permission.KILL_UID"
+  ],
+  "android.app.ActivityManager#forceStopPackage": [
+    "android.Manifest.permission.FORCE_STOP_PACKAGES"
+  ],
+  "android.app.ActivityManager#getCurrentUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.app.ActivityManager#switchUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.ActivityManager#dumpPackageState": [
+    "android.Manifest.permission.DUMP"
+  ],
+  "android.app.ActivityManager#setPersistentVrThread": [
+    "android.Manifest.permission.RESTRICTED_VR_ACCESS"
+  ],
+  "android.app.ActivityManager#scheduleApplicationInfoChanged": [
+    "android.Manifest.permission.CHANGE_CONFIGURATION"
+  ],
+  "android.content.Context#startActivityAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.Context#startActivitiesAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.Context#sendBroadcastAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#sendOrderedBroadcastAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#sendStickyBroadcast": [
+    "android.Manifest.permission.BROADCAST_STICKY"
+  ],
+  "android.content.Context#sendStickyOrderedBroadcast": [
+    "android.Manifest.permission.BROADCAST_STICKY"
+  ],
+  "android.content.Context#removeStickyBroadcast": [
+    "android.Manifest.permission.BROADCAST_STICKY"
+  ],
+  "android.content.Context#sendStickyBroadcastAsUser": [
+    "android.Manifest.permission.BROADCAST_STICKY",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#sendStickyOrderedBroadcastAsUser": [
+    "android.Manifest.permission.BROADCAST_STICKY",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#removeStickyBroadcastAsUser": [
+    "android.Manifest.permission.BROADCAST_STICKY",
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#registerReceiverAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.content.Context#startForegroundServiceAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#startServiceAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#stopServiceAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.content.Context#bindServiceAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.app.KeyguardManager.KeyguardLock#disableKeyguard": [
+    "android.Manifest.permission.DISABLE_KEYGUARD"
+  ],
+  "android.app.KeyguardManager.KeyguardLock#reenableKeyguard": [
+    "android.Manifest.permission.DISABLE_KEYGUARD"
+  ],
+  "android.os.RecoverySystem#processPackage": [
+    "android.Manifest.permission.RECOVERY"
+  ],
+  "android.os.RecoverySystem#installPackage": [
+    "android.Manifest.permission.RECOVERY"
+  ],
+  "android.os.RecoverySystem#scheduleUpdateOnBoot": [
+    "android.Manifest.permission.RECOVERY"
+  ],
+  "android.os.RecoverySystem#cancelScheduledUpdate": [
+    "android.Manifest.permission.RECOVERY"
+  ],
+  "android.os.RecoverySystem#rebootWipeAb": [
+    "android.Manifest.permission.REBOOT",
+    "android.Manifest.permission.RECOVERY"
+  ],
+  "android.telephony.ims.ProvisioningManager#registerProvisioningChangedCallback": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ProvisioningManager#unregisterProvisioningChangedCallback": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ProvisioningManager#getProvisioningIntValue": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ProvisioningManager#getProvisioningStringValue": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.ims.ProvisioningManager#setProvisioningIntValue": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ProvisioningManager#setProvisioningStringValue": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ProvisioningManager#setProvisioningStatusForCapability": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.ims.ProvisioningManager#getProvisioningStatusForCapability": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.view.inputmethod.InputMethodManager#getInputMethodListAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.view.inputmethod.InputMethodManager#getEnabledInputMethodListAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.view.inputmethod.InputMethodManager#showInputMethodPickerFromSystem": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.view.inputmethod.InputMethodManager#setCurrentInputMethodSubtype": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.media.AudioManager#setVolumeIndexForAttributes": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#getVolumeIndexForAttributes": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#getMaxVolumeIndexForAttributes": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#getMinVolumeIndexForAttributes": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#forceVolumeControlStream": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.media.AudioManager#requestAudioFocus": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE",
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#setFocusRequestResult": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#dispatchAudioFocusChange": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#registerAudioPolicy": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#unregisterAudioPolicyAsync": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#unregisterAudioPolicy": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#getAudioProductStrategies": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.media.AudioManager#getAudioVolumeGroups": [
+    "android.Manifest.permission.MODIFY_AUDIO_ROUTING"
+  ],
+  "android.net.VpnService#prepareAndAuthorize": [
+    "android.Manifest.permission.CONTROL_VPN"
+  ],
+  "android.bluetooth.BluetoothHeadset#connect": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothHeadset#disconnect": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothHeadset#setPriority": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothHeadset#startScoUsingVirtualVoiceCall": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothHeadset#stopScoUsingVirtualVoiceCall": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothHeadset#setActiveDevice": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothHeadset#getActiveDevice": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothHeadset#isInbandRingingEnabled": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.telephony.SubscriptionManager#getActiveSubscriptionInfo": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#getActiveSubscriptionInfoForSimSlotIndex": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#getActiveSubscriptionInfoList": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#getActiveSubscriptionInfoCount": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#setDefaultSmsSubId": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#setDefaultDataSubId": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#isActiveSubscriptionId": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#setPreferredDataSubscriptionId": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#getPreferredDataSubscriptionId": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#getOpportunisticSubscriptions": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#switchToSubscription": [
+    "android.Manifest.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"
+  ],
+  "android.telephony.SubscriptionManager#setOpportunistic": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#createSubscriptionGroup": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#addSubscriptionsIntoGroup": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#removeSubscriptionsFromGroup": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#getSubscriptionsInGroup": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#setSubscriptionEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#isSubscriptionEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.SubscriptionManager#getEnabledSubscriptionId": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.app.admin.DevicePolicyManager#packageHasActiveAdmins": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"
+  ],
+  "android.app.admin.DevicePolicyManager#getPasswordComplexity": [
+    "android.Manifest.permission.REQUEST_PASSWORD_COMPLEXITY"
+  ],
+  "android.app.admin.DevicePolicyManager#getDeviceOwnerComponentOnAnyUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#getDeviceOwnerUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#getDeviceOwner": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#getDeviceOwnerNameOnAnyUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#setActiveProfileOwner": [
+    "android.Manifest.permission.MANAGE_DEVICE_ADMINS"
+  ],
+  "android.app.admin.DevicePolicyManager#getProfileOwnerAsUser": [
+    "android.Manifest.permission.INTERACT_ACROSS_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#getProfileOwnerNameAsUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#getPermittedAccessibilityServices": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#getPermittedInputMethodsForCurrentUser": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#notifyPendingSystemUpdate": [
+    "android.Manifest.permission.NOTIFY_PENDING_SYSTEM_UPDATE"
+  ],
+  "android.app.admin.DevicePolicyManager#getUserProvisioningState": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#isDeviceProvisioned": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#setDeviceProvisioningConfigApplied": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#isDeviceProvisioningConfigApplied": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#setProfileOwnerCanAccessDeviceIds": [
+    "android.Manifest.permission.GRANT_PROFILE_OWNER_DEVICE_IDS_ACCESS"
+  ],
+  "android.app.admin.DevicePolicyManager#isManagedKiosk": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.app.admin.DevicePolicyManager#isUnattendedManagedKiosk": [
+    "android.Manifest.permission.MANAGE_USERS"
+  ],
+  "android.telephony.TelephonyManager#getDeviceSoftwareVersion": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getDeviceId": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getImei": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getMeid": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getNai": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCellLocation": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.telephony.TelephonyManager#enableLocationUpdates": [
+    "android.Manifest.permission.CONTROL_LOCATION_UPDATES"
+  ],
+  "android.telephony.TelephonyManager#disableLocationUpdates": [
+    "android.Manifest.permission.CONTROL_LOCATION_UPDATES"
+  ],
+  "android.telephony.TelephonyManager#getNeighboringCellInfo": [
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+  ],
+  "android.telephony.TelephonyManager#getCarrierConfig": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getNetworkType": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getDataNetworkType": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getVoiceNetworkType": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getSimSerialNumber": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getLteOnCdmaMode": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getUiccCardsInfo": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getUiccSlotsInfo": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#refreshUiccProfile": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#switchSlots": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getLogicalToPhysicalSlotMapping": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getSubscriberId": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getGroupIdLevel1": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getLine1Number": [
+    "android.Manifest.permission.READ_SMS",
+    "android.Manifest.permission.READ_PHONE_NUMBERS",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getLine1AlphaTag": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getMsisdn": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getVoiceMailNumber": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isVisualVoicemailEnabled": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getVisualVoicemailPackageName": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#sendVisualVoicemailSmsForSubscriber": [
+    "android.Manifest.permission.SEND_SMS"
+  ],
+  "android.telephony.TelephonyManager#setVoiceActivationState": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setDataActivationState": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getVoiceActivationState": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getDataActivationState": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getVoiceMessageCount": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getVoiceMailAlphaTag": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getIsimDomain": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCdmaEriIconIndex": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCdmaEriIconMode": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCdmaEriText": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getAllCellInfo": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION"
+  ],
+  "android.telephony.TelephonyManager#requestCellInfoUpdate": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#iccOpenLogicalChannelBySlot": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#iccCloseLogicalChannelBySlot": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#iccTransmitApduLogicalChannelBySlot": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#iccTransmitApduBasicChannelBySlot": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#resetRadioConfig": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#rebootRadio": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#requestNumberVerification": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getIsimIst": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getForbiddenPlmns": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getPreferredNetworkType": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE)"
+  ],
+  "android.telephony.TelephonyManager#getPreferredNetworkTypeBitmask": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setNetworkSelectionModeAutomatic": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getAvailableNetworks": [
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION",
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#requestNetworkScan": [
+    "android.Manifest.permission.ACCESS_FINE_LOCATION",
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setNetworkSelectionModeManual": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getNetworkSelectionMode": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isInEmergencySmsMode": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setPreferredNetworkTypeBitmask": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCdmaMdn": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCdmaMin": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#call": [
+    "android.Manifest.permission.CALL_PHONE"
+  ],
+  "android.telephony.TelephonyManager#endCall": [
+    "android.Manifest.permission.CALL_PHONE"
+  ],
+  "android.telephony.TelephonyManager#answerRingingCall": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isOffhook": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isRinging": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isIdle": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isRadioOn": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#supplyPin": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#supplyPuk": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#supplyPinReportResult": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#supplyPukReportResult": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#sendUssdRequest": [
+    "android.Manifest.permission.CALL_PHONE"
+  ],
+  "android.telephony.TelephonyManager#handlePinMmi": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#handlePinMmiForSubscriber": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#toggleRadioOnOff": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setRadio": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setRadioPower": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getRadioPowerState": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#enableDataConnectivity": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#disableDataConnectivity": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setDataEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isDataEnabled": [
+    "android.Manifest.permission.ACCESS_NETWORK_STATE",
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isDataRoamingEnabled": [
+    "android.Manifest.permission.READ_PHONE_STATE",
+    "android.Manifest.permission.ACCESS_NETWORK_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCdmaRoamingMode": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setCdmaRoamingMode": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setCdmaSubscriptionMode": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setDataRoamingEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#enableVideoCalling": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isVideoCallingEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setSimPowerState": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setSimPowerStateForSlot": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getSimLocale": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getServiceState": [
+    "android.Manifest.permission.READ_PHONE_STATE",
+    "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+  ],
+  "android.telephony.TelephonyManager#getCarrierIdFromMccMnc": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCertsFromCarrierPrivilegeAccessRules": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getAidForAppType": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getTelephonyHistograms": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setAllowedCarriers": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setCarrierRestrictionRules": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getAllowedCarriers": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getCarrierRestrictionRules": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setCarrierDataEnabled": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getEmergencyCallbackMode": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isManualNetworkSelectionAllowed": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setRadioIndicationUpdateMode": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getNumberOfModemsWithSimultaneousDataConnections": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setOpportunisticNetworkState": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isOpportunisticNetworkEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getSupportedRadioAccessFamily": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isEmergencyAssistanceEnabled": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getEmergencyNumberList": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isPotentialEmergencyNumber": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#getPreferredOpportunisticDataSubscription": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE",
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#enableModemForSlot": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setMultiSimCarrierRestriction": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isMultiSimSupported": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#switchMultiSimConfig": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#doesSwitchMultiSimConfigTriggerReboot": [
+    "android.Manifest.permission.READ_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#setDataAllowedDuringVoiceCall": [
+    "android.Manifest.permission.MODIFY_PHONE_STATE"
+  ],
+  "android.telephony.TelephonyManager#isDataAllowedInVoiceCall": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.bluetooth.BluetoothA2dp#getActiveDevice": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothA2dp#getPriority": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.net.IpSecTransform#startNattKeepalive": [
+    "android.Manifest.permission.MANAGE_IPSEC_TUNNELS",
+    "android.Manifest.permission.PACKET_KEEPALIVE_OFFLOAD"
+  ],
+  "android.net.IpSecTransform#stopNattKeepalive": [
+    "android.Manifest.permission.MANAGE_IPSEC_TUNNELS",
+    "android.Manifest.permission.PACKET_KEEPALIVE_OFFLOAD"
+  ],
+  "android.os.Build#getSerial": [
+    "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+  ],
+  "android.permission.PermissionControllerManager#revokeRuntimePermissions": [
+    "android.Manifest.permission.REVOKE_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#setRuntimePermissionGrantStateByDeviceAdmin": [
+    "android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS",
+    "android.Manifest.permission.ADJUST_RUNTIME_PERMISSIONS_POLICY",
+    "android.Manifest.permission.REVOKE_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#getRuntimePermissionBackup": [
+    "android.Manifest.permission.GET_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#restoreRuntimePermissionBackup": [
+    "android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#restoreDelayedRuntimePermissionBackup": [
+    "android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#getAppPermissions": [
+    "android.Manifest.permission.GET_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#revokeRuntimePermission": [
+    "android.Manifest.permission.REVOKE_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#countPermissionApps": [
+    "android.Manifest.permission.GET_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#getPermissionUsages": [
+    "android.Manifest.permission.GET_RUNTIME_PERMISSIONS"
+  ],
+  "android.permission.PermissionControllerManager#grantOrUpgradeDefaultRuntimePermissions": [
+    "android.Manifest.permission.ADJUST_RUNTIME_PERMISSIONS_POLICY"
+  ],
+  "android.app.trust.TrustManager#setDeviceLockedForUser": [
+    "android.Manifest.permission.ACCESS_KEYGUARD_SECURE_STORAGE"
+  ],
+  "android.app.trust.TrustManager#isTrustUsuallyManaged": [
+    "android.Manifest.permission.TRUST_LISTENER"
+  ],
+  "android.app.trust.TrustManager#unlockedByBiometricForUser": [
+    "android.Manifest.permission.ACCESS_KEYGUARD_SECURE_STORAGE"
+  ],
+  "android.app.trust.TrustManager#clearAllBiometricRecognized": [
+    "android.Manifest.permission.ACCESS_KEYGUARD_SECURE_STORAGE"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#updateModel": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#getModel": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#deleteModel": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#createSoundTriggerDetector": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#loadSoundModel": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#startRecognition": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#stopRecognition": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#unloadSoundModel": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#isRecognitionActive": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.media.soundtrigger.SoundTriggerManager#getModelState": [
+    "android.Manifest.permission.MANAGE_SOUND_TRIGGER"
+  ],
+  "android.app.AlarmManager#set": [
+    "android.Manifest.permission.UPDATE_DEVICE_STATS"
+  ],
+  "android.app.AlarmManager#setTime": [
+    "android.Manifest.permission.SET_TIME"
+  ],
+  "android.app.AlarmManager#setTimeZone": [
+    "android.Manifest.permission.SET_TIME_ZONE"
+  ],
+  "android.bluetooth.BluetoothAdapter#isEnabled": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#getState": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#getLeState": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#enable": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#disable": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#getAddress": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#setName": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#getBluetoothClass": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#setBluetoothClass": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothAdapter#getIoCapability": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#setIoCapability": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothAdapter#getLeIoCapability": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#setLeIoCapability": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothAdapter#getScanMode": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#startDiscovery": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#cancelDiscovery": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#isDiscovering": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#getMaxConnectedAudioDevices": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#getBondedDevices": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#getProfileConnectionState": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#listenUsingRfcommWithServiceRecord": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#listenUsingInsecureRfcommWithServiceRecord": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#enableNoAutoConnect": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#startLeScan": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#stopLeScan": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.BluetoothAdapter#listenUsingL2capChannel": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#listenUsingL2capCoc": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#listenUsingInsecureL2capChannel": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#listenUsingInsecureL2capCoc": [
+    "android.Manifest.permission.BLUETOOTH"
+  ],
+  "android.bluetooth.BluetoothAdapter#addOnMetadataChangedListener": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.bluetooth.BluetoothAdapter#removeOnMetadataChangedListener": [
+    "android.Manifest.permission.BLUETOOTH_PRIVILEGED"
+  ],
+  "android.content.rollback.RollbackManager#getAvailableRollbacks": [
+    "android.Manifest.permission.TEST_MANAGE_ROLLBACKS",
+    "android.Manifest.permission.MANAGE_ROLLBACKS"
+  ],
+  "android.content.rollback.RollbackManager#getRecentlyCommittedRollbacks": [
+    "android.Manifest.permission.TEST_MANAGE_ROLLBACKS",
+    "android.Manifest.permission.MANAGE_ROLLBACKS"
+  ],
+  "android.content.rollback.RollbackManager#commitRollback": [
+    "android.Manifest.permission.TEST_MANAGE_ROLLBACKS",
+    "android.Manifest.permission.MANAGE_ROLLBACKS"
+  ],
+  "android.content.rollback.RollbackManager#reloadPersistedData": [
+    "android.Manifest.permission.TEST_MANAGE_ROLLBACKS"
+  ],
+  "android.content.rollback.RollbackManager#expireRollbackForPackage": [
+    "android.Manifest.permission.TEST_MANAGE_ROLLBACKS"
+  ],
+  "android.provider.Settings.Secure#putString": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.provider.Settings.Secure#resetToDefaults": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.provider.Settings.Global#putString": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.provider.Settings.Global#resetToDefaults": [
+    "android.Manifest.permission.WRITE_SECURE_SETTINGS"
+  ],
+  "android.app.usage.UsageStatsManager#getAppStandbyBucket": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.app.usage.UsageStatsManager#setAppStandbyBucket": [
+    "android.Manifest.permission.CHANGE_APP_IDLE_STATE"
+  ],
+  "android.app.usage.UsageStatsManager#getAppStandbyBuckets": [
+    "android.Manifest.permission.PACKAGE_USAGE_STATS"
+  ],
+  "android.app.usage.UsageStatsManager#setAppStandbyBuckets": [
+    "android.Manifest.permission.CHANGE_APP_IDLE_STATE"
+  ],
+  "android.app.usage.UsageStatsManager#registerAppUsageObserver": [
+    "android.Manifest.permission.OBSERVE_APP_USAGE"
+  ],
+  "android.app.usage.UsageStatsManager#unregisterAppUsageObserver": [
+    "android.Manifest.permission.OBSERVE_APP_USAGE"
+  ],
+  "android.app.usage.UsageStatsManager#registerUsageSessionObserver": [
+    "android.Manifest.permission.OBSERVE_APP_USAGE"
+  ],
+  "android.app.usage.UsageStatsManager#unregisterUsageSessionObserver": [
+    "android.Manifest.permission.OBSERVE_APP_USAGE"
+  ],
+  "android.app.usage.UsageStatsManager#registerAppUsageLimitObserver": [
+    "android.Manifest.permission.SUSPEND_APPS",
+    "android.Manifest.permission.OBSERVE_APP_USAGE"
+  ],
+  "android.app.usage.UsageStatsManager#unregisterAppUsageLimitObserver": [
+    "android.Manifest.permission.SUSPEND_APPS",
+    "android.Manifest.permission.OBSERVE_APP_USAGE"
+  ],
+  "android.app.usage.UsageStatsManager#whitelistAppTemporarily": [
+    "android.Manifest.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST"
+  ],
+  "android.os.image.DynamicSystemClient#bind": [
+    "android.Manifest.permission.INSTALL_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemClient#unbind": [
+    "android.Manifest.permission.INSTALL_DYNAMIC_SYSTEM"
+  ],
+  "android.os.image.DynamicSystemClient#start": [
+    "android.Manifest.permission.INSTALL_DYNAMIC_SYSTEM"
+  ],
+  "android.bluetooth.le.BluetoothLeScanner#startScan": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.bluetooth.le.BluetoothLeScanner#startScanFromSource": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN",
+    "android.Manifest.permission.UPDATE_DEVICE_STATS"
+  ],
+  "android.bluetooth.le.BluetoothLeScanner#stopScan": [
+    "android.Manifest.permission.BLUETOOTH_ADMIN"
+  ],
+  "android.provider.Settings.Config#getString": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.Settings.Config#putString": [
+    "android.Manifest.permission.WRITE_DEVICE_CONFIG"
+  ],
+  "android.provider.Settings.Config#resetToDefaults": [
+    "android.Manifest.permission.WRITE_DEVICE_CONFIG"
+  ],
+  "android.net.wifi.WifiScanner#setScanningEnabled": [
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.wifi.WifiScanner#registerScanListener": [
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.wifi.WifiScanner#startBackgroundScan": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.WifiScanner#stopBackgroundScan": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.WifiScanner#getScanResults": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.WifiScanner#startScan": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.WifiScanner#stopScan": [
+    "android.Manifest.permission.LOCATION_HARDWARE"
+  ],
+  "android.net.wifi.WifiScanner#startDisconnectedPnoScan": [
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.net.wifi.WifiScanner#stopPnoScan": [
+    "android.Manifest.permission.NETWORK_STACK"
+  ],
+  "android.os.Vibrator#vibrate": [
+    "android.Manifest.permission.VIBRATE"
+  ],
+  "android.os.Vibrator#cancel": [
+    "android.Manifest.permission.VIBRATE"
+  ],
+  "android.app.Activity#registerRemoteAnimations": [
+    "android.Manifest.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS"
+  ],
+  "android.provider.DeviceConfig#getProperty": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#getString": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#getBoolean": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#getInt": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#getLong": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#getFloat": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#setProperty": [
+    "android.Manifest.permission.WRITE_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#resetToDefaults": [
+    "android.Manifest.permission.WRITE_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#addOnPropertyChangedListener": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.provider.DeviceConfig#addOnPropertiesChangedListener": [
+    "android.Manifest.permission.READ_DEVICE_CONFIG"
+  ],
+  "android.security.keystore.recovery.RecoverySession#newInstance": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoverySession#start": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoverySession#recoverKeyChainSnapshot": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.security.keystore.recovery.RecoverySession#close": [
+    "android.Manifest.permission.RECOVER_KEYSTORE"
+  ],
+  "android.app.job.JobInfo.Builder#setPersisted": [
+    "android.Manifest.permission.RECEIVE_BOOT_COMPLETED"
+  ],
+  "android.app.ActivityTaskManager#setTaskWindowingMode": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#setTaskWindowingModeSplitScreenPrimary": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#resizeStack": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#removeStacksInWindowingModes": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#removeStacksWithActivityTypes": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#removeAllVisibleRecentTasks": [
+    "android.Manifest.permission.REMOVE_TASKS"
+  ],
+  "android.app.ActivityTaskManager#moveTopActivityToPinnedStack": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#startSystemLockTaskMode": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#stopSystemLockTaskMode": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#moveTaskToStack": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#resizeTask": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#resizeDockedStack": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#listAllStacks": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#clearLaunchParamsForPackages": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ],
+  "android.app.ActivityTaskManager#setDisplayToSingleTaskInstance": [
+    "android.Manifest.permission.MANAGE_ACTIVITY_STACKS"
+  ]
+}

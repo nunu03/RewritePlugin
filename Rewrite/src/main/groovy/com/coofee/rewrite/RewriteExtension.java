@@ -1,10 +1,10 @@
 package com.coofee.rewrite;
 
-import com.android.sdklib.ISystemImage;
 import com.coofee.rewrite.annotation.AnnotationExtension;
 import com.coofee.rewrite.nineoldandroids.NineOldAndroidsExtension;
 import com.coofee.rewrite.reflect.ReflectExtension;
 import com.coofee.rewrite.replace.ReplaceMethodExtension;
+import com.coofee.rewrite.scan.ScanPermissionMethodCallerExtension;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -33,6 +33,8 @@ public class RewriteExtension {
     public ReflectExtension reflect;
 
     public AnnotationExtension annotation;
+
+    public ScanPermissionMethodCallerExtension scanPermissionMethodCaller;
 
     public ReplaceMethodExtension replaceMethod;
 
@@ -82,6 +84,27 @@ public class RewriteExtension {
         return annotation;
     }
 
+    public ScanPermissionMethodCallerExtension scanPermissionMethodCaller(Closure closure) {
+        System.out.println("[RewritePlugin] call RewriteExtension.replaceMethod() method...");
+        if (scanPermissionMethodCaller == null) {
+            scanPermissionMethodCaller = new ScanPermissionMethodCallerExtension();
+        }
+
+        ConfigureUtil.configure(closure, scanPermissionMethodCaller);
+
+        if (scanPermissionMethodCaller.configPermissionMethods != null) {
+            // fix groovy: convert ArrayList to HashSet
+            for (String key : scanPermissionMethodCaller.configPermissionMethods.keySet()) {
+                Collection collection = scanPermissionMethodCaller.configPermissionMethods.get(key);
+                scanPermissionMethodCaller.configPermissionMethods.put(key, new HashSet<>(collection));
+            }
+            scanPermissionMethodCaller.classMethodAndPermissionsMap.putAll(scanPermissionMethodCaller.configPermissionMethods);
+        }
+        scanPermissionMethodCaller.parseConfigFile();
+        System.out.println("[RewritePlugin] scanPermissionMethodCaller=" + scanPermissionMethodCaller);
+        return scanPermissionMethodCaller;
+    }
+
     public ReplaceMethodExtension replaceMethod(Closure closure) {
         System.out.println("[RewritePlugin] call RewriteExtension.replaceMethod() method...");
         if (replaceMethod == null) {
@@ -114,6 +137,7 @@ public class RewriteExtension {
                 ", nineOldAndroids=" + nineOldAndroids +
                 ", reflect=" + reflect +
                 ", annotation=" + annotation +
+                ", scanPermissionMethodCaller=" + scanPermissionMethodCaller +
                 ", replaceMethod=" + replaceMethod +
                 '}';
     }

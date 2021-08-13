@@ -27,47 +27,94 @@ rewrite {
         ]
     }
 
-    reflect {
-        enable = true
-
-        myAppPackages = [
-                "com/coofee/rewrite/",
-        ]
-
-        classAndMethods = [
-            /*************************************************** 应用列表 (START) ***************************************************/
-
-            "android/content/pm/PackageManager" : ["getInstalledApplications", "getInstalledPackages"] as Set,
-
-            /*************************************************** 应用列表 (END) ***************************************************/
-
-            /*************************************************** 定位权限 (START) ***************************************************/
-            // 系统定位
-            "android/location/LocationManager"         : ["requestLocationUpdates", "requestSingleUpdate"] as Set,
-
-            // IMEI & IMSI 定位：getCellLocation; getDeviceId/getSubscriberId/：READ_PHONE_STATE
-            "android/telephony/TelephonyManager"       : ["getCellLocation", "getAllCellInfo", "requestCellInfoUpdate", "requestNetworkScan", "getDeviceId", "getSubscriberId", "getImei"] as Set,
-
-            // 高德地图
-            "com/amap/api/location/AMapLocationClient" : ["startLocation", "startAssistantLocation"] as Set,
-            // 百度地图
-            "com/baidu/location/LocationClient"        : ["start"] as Set,
-            /*************************************************** 定位权限 (END) ***************************************************/
-
-            /*************************************************** MacAddress (START) ***************************************************/
-
-            "android/net/wifi/WifiInfo"                : ["getMacAddress"] as Set,
-            "java/net/NetworkInterface"                : ["getHardwareAddress"] as Set,
-
-            /*************************************************** MacAddress (END) ***************************************************/
-        ]
-    }
+//    reflect {
+//        enable = true
+//
+//        myAppPackages = [
+//                "com/coofee/rewrite/",
+//        ]
+//
+//        classAndMethods = [
+//            /*************************************************** 应用列表 (START) ***************************************************/
+//
+//            "android/content/pm/PackageManager" : ["getInstalledApplications", "getInstalledPackages"] as Set,
+//
+//            /*************************************************** 应用列表 (END) ***************************************************/
+//
+//            /*************************************************** 定位权限 (START) ***************************************************/
+//            // 系统定位
+//            "android/location/LocationManager"         : ["requestLocationUpdates", "requestSingleUpdate"] as Set,
+//
+//            // IMEI & IMSI 定位：getCellLocation; getDeviceId/getSubscriberId/：READ_PHONE_STATE
+//            "android/telephony/TelephonyManager"       : ["getCellLocation", "getAllCellInfo", "requestCellInfoUpdate", "requestNetworkScan", "getDeviceId", "getSubscriberId", "getImei"] as Set,
+//
+//            // 高德地图
+//            "com/amap/api/location/AMapLocationClient" : ["startLocation", "startAssistantLocation"] as Set,
+//            // 百度地图
+//            "com/baidu/location/LocationClient"        : ["start"] as Set,
+//            /*************************************************** 定位权限 (END) ***************************************************/
+//
+//            /*************************************************** MacAddress (START) ***************************************************/
+//
+//            "android/net/wifi/WifiInfo"                : ["getMacAddress"] as Set,
+//            "java/net/NetworkInterface"                : ["getHardwareAddress"] as Set,
+//
+//            /*************************************************** MacAddress (END) ***************************************************/
+//        ]
+//    }
 
     annotation {
         enable = true
 
         excludes = [
                 "Lkotlin/Metadata;"
+        ]
+    }
+
+    scanPermissionMethodCaller {
+        // 会在 replaceMethod 之后执行，所以在 replaceMethod 中配置的方法不会被统计到。
+        enable = true
+
+        // 配置未添加权限的方法，比如隐私方法等。
+        configPermissionMethods = [
+                "android.content.pm.PackageManager#getInstalledPackages"         : [
+                        "获取应用列表"
+                ] as Set,
+                "android.content.pm.PackageManager#getInstalledApplications"     : [
+                        "获取应用列表"
+                ] as Set,
+
+                // 高德地图
+                "com.amap.api.location.AMapLocationClient#startLocation"         : [
+                        "android.Manifest.permission.ACCESS_FINE_LOCATION",
+                ] as Set,
+                "com.amap.api.location.AMapLocationClient#startAssistantLocation": [
+                        "android.Manifest.permission.ACCESS_FINE_LOCATION",
+                ] as Set,
+
+                // 百度地图
+                "com.baidu.location.LocationClient#start"                        : [
+                        "android.Manifest.permission.ACCESS_FINE_LOCATION",
+                ] as Set,
+
+                "android.net.wifi.WifiInfo#getMacAddress"                        : [
+                        "Mac地址"
+                ] as Set,
+                "java.net.NetworkInterface#getHardwareAddress"                   : [
+                        "Mac地址"
+                ] as Set,
+        ]
+
+        // 当执行 `collectAndroidPermissionMethod` 任务成功后，
+        // 会生成 android_framework_class_method_permission.json 到当前project目录中.
+        configFile = file("android_framework_class_method_permission.json")
+
+        // 输出扫描结果
+        outputFile = file("scan_permission_method_caller.json")
+
+        // 忽略android系统库
+        excludes = [
+                "android/", "java/", "javax/", 'com/coofee/rewrite/hook/'
         ]
     }
 

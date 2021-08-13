@@ -46,5 +46,15 @@
         "dest_method": "java.util.List getInstalledPackages(android.content.pm.PackageManager, int)"
       }
     ]
+  },
+  {
+    "src_class": "android.content.ContentResolver",
+    "dest_class": "com.coofee.rewrite.hook.content.ShadowContentResolver",
+    "methods": [
+      {
+        "src_method": "android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)",
+        "dest_method": "android.database.Cursor query(android.content.ContentResolver, android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)"
+      }
+    ]
   }
 ]

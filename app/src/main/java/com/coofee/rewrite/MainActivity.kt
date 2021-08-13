@@ -1,13 +1,19 @@
 package com.coofee.rewrite
 
+import android.app.Service
 import android.content.Context
+import android.content.pm.PackageManager
+import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.provider.ContactsContract
+import android.telephony.TelephonyManager
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.coofee.rewrite.hook.sharedpreferences.ShadowSharedPreferences
 import com.coofee.rewrite.hook.sharedpreferences.SharedPreferencesProxy
+import java.net.NetworkInterface
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         SharedPreferencesProxy.print()
 
         testPackageManager()
+
+        testQueryContacts()
+
+        testGetDeviceId()
     }
 
     private fun test_Context_getSharedPreferences_string() {
@@ -78,4 +88,43 @@ class MainActivity : AppCompatActivity() {
             )
         }
     }
+
+    private fun testQueryContacts() {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(android.Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_GRANTED) {
+                    val cursor = this.contentResolver.query(
+                        ContactsContract.Contacts.CONTENT_URI, arrayOf(
+                            ContactsContract.Contacts._ID,
+                            ContactsContract.Contacts.DISPLAY_NAME
+                        ), null, null, null
+                    );
+                    cursor?.close();
+                }
+            }
+        } catch (e: Throwable) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun testGetDeviceId() {
+        try {
+            val telephonyManager = getSystemService(Service.TELEPHONY_SERVICE) as TelephonyManager
+            val deviceId = telephonyManager.getDeviceId()
+            println("deviceId=$deviceId")
+        } catch (e: Throwable) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun testGetMacAddress() {
+        val wifiManager = applicationContext.getSystemService(Service.WIFI_SERVICE) as WifiManager
+        println("wifiManager.connectionInfo.macAddress=${wifiManager.connectionInfo.macAddress}")
+
+        val networkInterfaces = NetworkInterface.getNetworkInterfaces()
+        for (networkInterface in networkInterfaces) {
+            println("networkInterface.hardwareAddress=${networkInterface.hardwareAddress}")
+        }
+    }
+
 }

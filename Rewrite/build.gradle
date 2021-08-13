@@ -37,6 +37,8 @@ dependencies {
     implementation group: 'org.ow2.asm', name: 'asm-commons', version: '7.0'
     implementation group: 'org.apache.maven.shared', name: 'maven-dependency-analyzer', version: '1.11.1'
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation 'com.github.javaparser:javaparser-symbol-solver-core:3.22.1'
 }
 
 compileJava {
