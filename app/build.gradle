@@ -15,7 +15,7 @@ buildscript {
         // in the individual module build.gradle files
 
 //        classpath 'com.github.coofee:RewritePlugin:1.0.3'
-        classpath 'com.coofee.rewrite:rewrite:1.0.0'
+        classpath 'com.coofee.rewrite:rewrite:1.0.3'
     }
 }
 

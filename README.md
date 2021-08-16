@@ -137,9 +137,10 @@ $ ./gradlew :app:collectAndroidPermissionMethod
 ```shell
 $ ./gradlew :app:assembleDebug
 [RewritePlugin] scan permission method caller result success write to file app/scan_permission_method_caller.json
+[RewritePlugin] scan permission method caller result success write to file app/scan_permission_method_caller_result_by_module.json
 ```
 
-查看`scan_permission_method_caller.json`扫描结果文件（按照权限分组）格式如下：
+* `scan_permission_method_caller.json`扫描结果文件是按照权限进行分组，样例如下：
 
 ```json
 {
@@ -166,6 +167,54 @@ $ ./gradlew :app:assembleDebug
       "methodName": "testGetMacAddress",
       "lineNo": 126,
       "permissionMethod": "java.net.NetworkInterface#getHardwareAddress"
+    }
+  ]
+}
+```
+
+* `scan_permission_method_caller_result_by_module.json`扫描结果文件则是按照模块名进行分组，样例如下：
+
+```json
+{
+  "androidx.appcompat:appcompat:1.1.0": [
+    {
+      "className": "androidx.appcompat.app.TwilightManager",
+      "methodName": "getLastKnownLocationForProvider",
+      "lineNo": 135,
+      "permissionMethod": "android.location.LocationManager#getLastKnownLocation",
+      "permissions": [
+        "android.Manifest.permission.ACCESS_FINE_LOCATION",
+        "android.Manifest.permission.ACCESS_COARSE_LOCATION"
+      ]
+    }
+  ],
+  "8f0a287af65fe4840370804c25783e3d59e2e135": [
+    {
+      "className": "com.coofee.rewrite.MainActivity",
+      "methodName": "testGetDeviceId",
+      "lineNo": 113,
+      "permissionMethod": "android.telephony.TelephonyManager#getDeviceId",
+      "permissions": [
+        "android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"
+      ]
+    },
+    {
+      "className": "com.coofee.rewrite.MainActivity",
+      "methodName": "testGetMacAddress",
+      "lineNo": 122,
+      "permissionMethod": "android.net.wifi.WifiInfo#getMacAddress",
+      "permissions": [
+        "Mac地址"
+      ]
+    },
+    {
+      "className": "com.coofee.rewrite.MainActivity",
+      "methodName": "testGetMacAddress",
+      "lineNo": 126,
+      "permissionMethod": "java.net.NetworkInterface#getHardwareAddress",
+      "permissions": [
+        "Mac地址"
+      ]
     }
   ]
 }

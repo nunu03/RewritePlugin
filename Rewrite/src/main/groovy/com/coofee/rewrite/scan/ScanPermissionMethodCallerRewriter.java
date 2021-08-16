@@ -11,6 +11,7 @@ import org.objectweb.asm.tree.*;
 import java.io.File;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
 
 public class ScanPermissionMethodCallerRewriter extends Rewriter.Adapter {
@@ -73,12 +74,22 @@ public class ScanPermissionMethodCallerRewriter extends Rewriter.Adapter {
         }
 
         try {
-            String json = new Gson().toJson(mResult.resultMap);
+            String json = new Gson().toJson(mResult.resultByPermissionMap);
             FileUtils.writeStringToFile(resultFile, json);
             System.out.println("[RewritePlugin] scan permission method caller result success write to file " + resultFile.getAbsolutePath());
         } catch (Throwable e) {
-            System.out.println("[RewritePlugin] scan permission method caller result fail write to file " + resultFile.getAbsolutePath());
-            e.printStackTrace();
+            new Throwable("[RewritePlugin] scan permission method caller result fail write to file " + resultFile.getAbsolutePath(), e).printStackTrace();
+        }
+
+        File resultByModuleFile = new File(resultFile.getParentFile(), "scan_permission_method_caller_result_by_module.json");
+        try {
+            String json = new Gson().toJson(mResult.resultByModuleMap);
+            FileUtils.writeStringToFile(resultByModuleFile, json);
+            System.out.println("[RewritePlugin] scan permission method caller result success write to file " + resultByModuleFile.getAbsolutePath());
+        } catch (Throwable e) {
+            new Throwable("[RewritePlugin] scan permission method caller result fail write to file " + resultByModuleFile.getAbsolutePath(), e).printStackTrace();
         }
     }
+
+
 }
