@@ -136,11 +136,11 @@ $ ./gradlew :app:collectAndroidPermissionMethod
 
 ```shell
 $ ./gradlew :app:assembleDebug
-[RewritePlugin] scan permission method caller result success write to file app/scan_permission_method_caller.json
+[RewritePlugin] scan permission method caller result success write to file app/scan_permission_method_caller_result.json
 [RewritePlugin] scan permission method caller result success write to file app/scan_permission_method_caller_result_by_module.json
 ```
 
-* `scan_permission_method_caller.json`扫描结果文件是按照权限进行分组，样例如下：
+* `scan_permission_method_caller_result.json`扫描结果文件是按照权限进行分组，样例如下：
 
 ```json
 {
@@ -276,3 +276,8 @@ replaceMethod {
 3. 如果`src_method`方法存在泛型，在需要去掉其限定类型，见：PackageManager配置。
 
 配置例子详见：[replace_method.json](./app/replace_method.json)
+
+# License
+
+RewritePlugin is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
+

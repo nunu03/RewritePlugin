@@ -110,7 +110,7 @@ rewrite {
         configFile = file("android_framework_class_method_permission.json")
 
         // 输出扫描结果
-        outputFile = file("scan_permission_method_caller.json")
+        outputFile = file("scan_permission_method_caller_result.json")
 
         // 忽略android系统库
         excludes = [
