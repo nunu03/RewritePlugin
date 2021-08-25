@@ -37,9 +37,6 @@ class RewriteTransform extends Transform {
     public RewriteTransform(Project project, AppExtension appExtension) {
         this.project = project;
         this.appExtension = appExtension;
-
-        final RewriteExtension rewriteExtension = (RewriteExtension) project.getExtensions().getByName("rewrite");
-        System.out.println("[RewritePlugin] rewriteExtension=" + rewriteExtension);
     }
 
     @Override

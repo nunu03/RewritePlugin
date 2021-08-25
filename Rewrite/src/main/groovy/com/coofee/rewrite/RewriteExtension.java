@@ -1,6 +1,7 @@
 package com.coofee.rewrite;
 
 import com.coofee.rewrite.annotation.AnnotationExtension;
+import com.coofee.rewrite.manifest.AndroidManifestExtension;
 import com.coofee.rewrite.nineoldandroids.NineOldAndroidsExtension;
 import com.coofee.rewrite.reflect.ReflectExtension;
 import com.coofee.rewrite.replace.ReplaceMethodExtension;
@@ -37,6 +38,8 @@ public class RewriteExtension {
     public ScanPermissionMethodCallerExtension scanPermissionMethodCaller;
 
     public ReplaceMethodExtension replaceMethod;
+
+    public AndroidManifestExtension manifest;
 
     public RewriteExtension() {
         System.out.println("[RewritePlugin] call RewriteExtension.constructor() method...");
@@ -115,6 +118,17 @@ public class RewriteExtension {
         replaceMethod.parseConfigFile();
         System.out.println("[RewritePlugin] replaceMethod=" + replaceMethod);
         return replaceMethod;
+    }
+
+    public AndroidManifestExtension manifest(Closure closure) {
+        System.out.println("[RewritePlugin] call RewriteExtension.manifest() method...");
+        if (manifest == null) {
+            manifest = new AndroidManifestExtension();
+        }
+
+        ConfigureUtil.configure(closure, manifest);
+        System.out.println("[RewritePlugin] manifest=" + manifest);
+        return manifest;
     }
 
     @Override

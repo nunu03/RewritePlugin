@@ -3,9 +3,9 @@ package com.coofee.rewrite
 import com.android.build.gradle.AppExtension
 import com.android.build.gradle.AppPlugin
 import com.android.build.gradle.internal.pipeline.TransformTask
+import com.coofee.rewrite.manifest.AndroidManifestRewriter
 import com.coofee.rewrite.scan.CollectAndroidPermissionMethodTask
 import com.coofee.rewrite.util.ReflectUtil
-import com.google.gson.Gson
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
@@ -21,12 +21,12 @@ public class RewritePlugin implements Plugin<Project> {
             makeIncrementTransform(project)
 
             project.extensions.create('rewrite', RewriteExtension)
-//            project.rewrite.extensions.create('nineOldAndroids', NineOldAndroidsExtension)
-
-            println("${new Gson().toJson(project.rewrite)}")
 
             AppExtension android = project.extensions.getByType(AppExtension)
             android.registerTransform(new RewriteTransform(project, android))
+
+            new AndroidManifestRewriter(project, android).attach()
+
             project.afterEvaluate {
                 project.tasks.register('collectAndroidPermissionMethod', CollectAndroidPermissionMethodTask) {
                     group = 'rewrite'

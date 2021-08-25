@@ -138,8 +138,7 @@ public class ReplaceMethodExtension {
                 String json = FileUtils.readFileToString(jsonFile, StandardCharsets.UTF_8);
                 return fromJson(json);
             } catch (Throwable e) {
-                System.out.println("fail parse config json file=" + jsonFile);
-                e.printStackTrace();
+                new Throwable("[RewritePlugin.ReplaceMethod] fail parse config json file=" + jsonFile).printStackTrace();
             }
 
             return new HashSet<>();

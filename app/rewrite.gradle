@@ -127,4 +127,37 @@ rewrite {
 
         configFile = file("replace_method.json")
     }
+
+    manifest {
+        // 启动处理AndroidManifest合并文件.
+        enable = true
+
+        /**
+         * 删除组件
+         */
+        stripComponents = [
+                "com.coofee.rewrite.dev.DevActivity"
+        ] as Set
+
+        /**
+         * 必须导出的组件
+         */
+        mustExportedComponents = [
+                ""
+        ] as Set
+
+        /**
+         * 禁止导出的组件
+         */
+        forbiddenExportedComponents = [
+                "com.coofee.rewrite.provider.ContentProvider1",
+                "com.coofee.rewrite.service.MyIntentService"
+        ] as Set
+
+        /**
+         * 检测不同的ContentProvider是否使用相同的authority.
+         */
+        checkContentProviderDuplicateAuthority = true
+
+    }
 }
