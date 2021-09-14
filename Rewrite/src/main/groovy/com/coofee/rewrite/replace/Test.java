@@ -6,6 +6,9 @@ import java.util.Set;
 
 public class Test {
     public static void main(String[] args) {
+        Method methodArray = Method.getMethod("java.lang.Process exec(java.lang.String[], java.lang.String[], java.io.File) throws java.io.IOException");
+        System.out.println("name=" + methodArray.getName() + ", returnType=" + methodArray.getReturnType() + ", desc" + methodArray.getDescriptor() + ", methodArray=" + methodArray);
+
         Method method = Method.getMethod("java.util.List getInstalledPackagesAsUser(int, int)");
         System.out.println("name=" + method.getName() + ", returnType=" + method.getReturnType() + ", desc" + method.getDescriptor());
 

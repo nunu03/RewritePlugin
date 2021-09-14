@@ -274,6 +274,7 @@ replaceMethod {
 1. 如果`src_method`是实例方法，则其对应的`dest_method`静态方法的第一个参数是实例自身，也就是`this`。
 2. 如果`src_method`是静态方法，则其对应的`dest_method`静态方法和其一模一样。
 3. 如果`src_method`方法存在泛型，在需要去掉其限定类型，见：PackageManager配置。
+4. 如果`src_class`是内部类，包名的分隔符则需要使用`$`而不是`.`，见：`android.provider.Settings$System`配置。
 
 配置例子详见：[replace_method.json](./app/replace_method.json)
 

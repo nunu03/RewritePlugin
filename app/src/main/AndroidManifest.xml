@@ -22,10 +22,10 @@
             android:name=".provider.ContentProvider1"
             android:authorities="${applicationId}.provider.data"
             android:exported="true"/>
-        <provider
-            android:name=".provider.ContentProvider2"
-            android:authorities="${applicationId}.provider.data"
-            android:exported="true"/>
+<!--        <provider-->
+<!--            android:name=".provider.ContentProvider2"-->
+<!--            android:authorities="${applicationId}.provider.data"-->
+<!--            android:exported="true"/>-->
 
         <activity android:name=".SplashActivity">
             <intent-filter>

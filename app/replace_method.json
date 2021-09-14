@@ -56,5 +56,15 @@
         "dest_method": "android.database.Cursor query(android.content.ContentResolver, android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)"
       }
     ]
+  },
+  {
+    "src_class": "android.provider.Settings$System",
+    "dest_class": "com.coofee.rewrite.hook.provider.ShadowSystem",
+    "methods": [
+      {
+        "src_method": "java.lang.String getString(android.content.ContentResolver, java.lang.String)",
+        "dest_method": "java.lang.String getString(android.content.ContentResolver, java.lang.String)"
+      }
+    ]
   }
 ]

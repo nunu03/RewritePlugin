@@ -2,12 +2,14 @@ package com.coofee.rewrite
 
 import android.app.Service
 import android.content.Context
+import android.content.MutableContextWrapper
 import android.content.pm.PackageManager
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.provider.ContactsContract
+import android.provider.Settings
 import android.telephony.TelephonyManager
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +35,21 @@ class MainActivity : AppCompatActivity() {
         testQueryContacts()
 
         testGetDeviceId()
+
+        test_context_inherit();
+
+        test_get_android_id()
+    }
+
+    private fun test_get_android_id() {
+        Settings.System.getString(contentResolver, Settings.System.ANDROID_ID)
+    }
+
+    private fun test_context_inherit() {
+        val contextWrapper = MutableContextWrapper(this)
+        val boolean = contextWrapper.getSharedPreferences("sp_context_inherit", Context.MODE_PRIVATE)
+            .getBoolean("key_boolean", false)
+        println("boolean=$boolean, contextWrapper=$contextWrapper")
     }
 
     private fun test_Context_getSharedPreferences_string() {
