@@ -284,8 +284,10 @@ replaceMethod {
 
 详见：`app`和`loader`模块的配置，其中`loader`是`dynamic-feature`模块。
 
-````shell
+```shell
+
 $ ./gradlew :app:bundleDebug --info 
+
 ```
 
 # License
