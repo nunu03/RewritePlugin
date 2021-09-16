@@ -22,6 +22,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        packageManager.getInstalledPackages(0)?.forEach {
+            Log.e("MainActivity", it.toString())
+        }
+
         test_Context_getSharedPreferences_string()
 
         test_Activity_getSharedPreferences_int()

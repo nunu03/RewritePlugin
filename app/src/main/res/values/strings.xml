@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RewritePlugin</string>
+    <string name="title_loader">loader</string>
 </resources>

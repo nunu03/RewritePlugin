@@ -1,7 +1,9 @@
 package com.coofee.rewrite;
 
 import com.android.build.api.transform.*;
+import com.android.build.api.variant.VariantInfo;
 import com.android.build.gradle.AppExtension;
+import com.android.build.gradle.DynamicFeaturePlugin;
 import com.android.build.gradle.internal.pipeline.IntermediateFolderUtils;
 import com.android.build.gradle.internal.pipeline.TransformManager;
 import com.coofee.rewrite.annotation.AnnotationExtension;
@@ -34,9 +36,17 @@ class RewriteTransform extends Transform {
     //    private RewriteCache rewriteCache;
     private URLClassLoader classLoader;
 
+    private final Set<? super QualifiedContent.Scope> scopeSet;
+
     public RewriteTransform(Project project, AppExtension appExtension) {
         this.project = project;
         this.appExtension = appExtension;
+
+        if (project.getPlugins().hasPlugin(DynamicFeaturePlugin.class)) {
+            scopeSet = TransformManager.SCOPE_FULL_WITH_FEATURES;
+        } else {
+            scopeSet = TransformManager.SCOPE_FULL_PROJECT;
+        }
     }
 
     @Override
@@ -50,8 +60,23 @@ class RewriteTransform extends Transform {
     }
 
     @Override
+    public boolean applyToVariant(VariantInfo variant) {
+        boolean apply = super.applyToVariant(variant);
+        String fullVariantName = variant.getFullVariantName();
+        System.out.println("[RewritePlugin] fullVariantName=" + fullVariantName + " applyToVariant=" + apply);
+        return apply;
+    }
+
+    @Override
     public Set<? super QualifiedContent.Scope> getScopes() {
-        return TransformManager.SCOPE_FULL_PROJECT;
+//        System.out.println("[RewritePlugin] getScopes=" + scopeSet);
+        return scopeSet;
+    }
+
+    @Override
+    public Set<? super QualifiedContent.Scope> getReferencedScopes() {
+//        System.out.println("[RewritePlugin] getReferencedScopes=" + scopeSet);
+        return scopeSet;
     }
 
     @Override
@@ -167,7 +192,7 @@ class RewriteTransform extends Transform {
                     }
                 }
 
-                System.out.println("[RewritePlugin] process directory: " + inputDir.getName());
+                System.out.println("[RewritePlugin] process directory: " + inputDir.getName() + ", path=" + inputDir.getAbsolutePath());
                 FileUtil.eachFileRecurse(inputDir, inputFile -> {
                     String outFilePath = inputFile.getAbsolutePath().replace(inputDir.getAbsolutePath(), outputDir.getAbsolutePath());
                     File outputFile = new File(outFilePath);
@@ -247,17 +272,20 @@ class RewriteTransform extends Transform {
         try {
             byte[] bytecode = FileUtils.readFileToByteArray(inputFile);
             if (ClassUtil.isValidClassBytes(bytecode)) {
+//                System.out.println("[RewritePlugin] process file=" + inputFile);
                 ClassNode classNode = AsmUtil.convert(bytecode);
                 for (Rewriter rewriter : rewriterList) {
                     classNode = rewriter.transform(directoryInput, classNode);
                 }
                 bytecode = AsmUtil.convert(classNode);
+            } else {
+//                System.out.println("[RewritePlugin] process file=" + inputFile + " is not valid.");
             }
             FileUtils.writeByteArrayToFile(outputFile, bytecode);
 
 //                        rewriteCache.put(directoryInput.getName(), directoryInput.getFile());
         } catch (Throwable e) {
-            project.getLogger().info("[RewritePlugin] fail process file: " + inputFile, e);
+            new Throwable("[RewritePlugin] fail process file: " + inputFile, e).printStackTrace();
         }
     }
 
@@ -272,7 +300,7 @@ class RewriteTransform extends Transform {
             }
         }
 
-        System.out.println("[RewritePlugin] process jar: " + jarInput.getName());
+        System.out.println("[RewritePlugin] process jar: " + jarInput.getName() + ", path=" + jarInput.getFile().getAbsolutePath());
         try {
             FileUtil.traverseJarClass(jarInput.getFile(), outputJar, (name, bytecode) -> {
                 ClassNode classNode = AsmUtil.convert(bytecode);
@@ -284,7 +312,7 @@ class RewriteTransform extends Transform {
 
 //            rewriteCache.put(jarInput.getName(), jarInput.getFile());
         } catch (Throwable e) {
-            project.getLogger().info("[RewritePlugin] fail process jar: " + jarInput.getFile(), e);
+            new Throwable("[RewritePlugin] fail process jar: " + jarInput.getFile(), e).printStackTrace();
         }
     }
 }

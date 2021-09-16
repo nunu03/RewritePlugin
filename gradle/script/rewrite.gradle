@@ -125,7 +125,7 @@ rewrite {
                 'com/coofee/rewrite/hook/'
         ]
 
-        configFile = file("replace_method.json")
+        configFile = new File(rootProject.rootDir, "gradle/script/replace_method.json").absolutePath
     }
 
     manifest {

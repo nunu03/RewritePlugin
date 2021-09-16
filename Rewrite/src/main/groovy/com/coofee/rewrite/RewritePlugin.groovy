@@ -2,6 +2,10 @@ package com.coofee.rewrite
 
 import com.android.build.gradle.AppExtension
 import com.android.build.gradle.AppPlugin
+import com.android.build.gradle.DynamicFeaturePlugin
+
+//import com.android.build.gradle.LibraryExtension
+//import com.android.build.gradle.LibraryPlugin
 import com.android.build.gradle.internal.pipeline.TransformTask
 import com.coofee.rewrite.manifest.AndroidManifestRewriter
 import com.coofee.rewrite.scan.CollectAndroidPermissionMethodTask
@@ -17,21 +21,23 @@ public class RewritePlugin implements Plugin<Project> {
     @Override
     public void apply(Project project) {
 
-        if (project.plugins.hasPlugin(AppPlugin)) {
+        if (project.plugins.hasPlugin(AppPlugin) || project.plugins.hasPlugin(DynamicFeaturePlugin)) {
             makeIncrementTransform(project)
 
             project.extensions.create('rewrite', RewriteExtension)
 
             AppExtension android = project.extensions.getByType(AppExtension)
             android.registerTransform(new RewriteTransform(project, android))
+            println("[RewritePlugin] registerTransform for project=${project}")
 
-            new AndroidManifestRewriter(project, android).attach()
-
-            project.afterEvaluate {
-                project.tasks.register('collectAndroidPermissionMethod', CollectAndroidPermissionMethodTask) {
-                    group = 'rewrite'
-                    sdkDirectory = android.sdkDirectory
-                    compileSdkVersion = android.compileSdkVersion
+            if (project.plugins.hasPlugin(AppPlugin)) {
+                new AndroidManifestRewriter(project, android).attach()
+                project.afterEvaluate {
+                    project.tasks.register('collectAndroidPermissionMethod', CollectAndroidPermissionMethodTask) {
+                        group = 'rewrite'
+                        sdkDirectory = android.sdkDirectory
+                        compileSdkVersion = android.compileSdkVersion
+                    }
                 }
             }
         }

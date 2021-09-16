@@ -278,6 +278,16 @@ replaceMethod {
 
 配置例子详见：[replace_method.json](./app/replace_method.json)
 
+## 3. dynamic-feature
+
+当有模块是`dynamic-feature`时，需要将`application`模块中的`minifyEnabled`必须设置为true，同时在`dynamic-feature`模块中引入插件配置，否则插件对`dynamic-feature`模块不生效。
+
+详见：`app`和`loader`模块的配置，其中`loader`是`dynamic-feature`模块。
+
+````shell
+$ ./gradlew :app:bundleDebug --info 
+```
+
 # License
 
 RewritePlugin is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).

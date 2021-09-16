@@ -1,3 +1,5 @@
+rootProject.name = "RewritePlugin"
+
 include ':app'
 include ':Rewrite'
-rootProject.name = "RewritePlugin"
+include ':loader'
