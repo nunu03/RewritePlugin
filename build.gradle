@@ -11,8 +11,8 @@ buildscript {
     repositories {
         mavenLocal()
         // 阿里云在jitpack上编译时访问非常慢，所以要关闭掉.
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven { url 'https://maven.aliyun.com/repository/google' }
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
@@ -31,8 +31,8 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven { url 'https://maven.aliyun.com/repository/google' }
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         mavenCentral()
     }
